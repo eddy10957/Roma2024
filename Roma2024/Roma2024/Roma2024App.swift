@@ -11,7 +11,7 @@ import SwiftUI
 struct Roma2024App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabBarView()
         }
     }
 }
