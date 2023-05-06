@@ -10,7 +10,18 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView {
-            
+            DiscoverView()
+                .tabItem({
+                    Image(systemName: "circle.fill")
+                })
+            CompetitionsView()
+                .tabItem({
+                    Image(systemName: "circle.fill")
+                })
+            MapView()
+                .tabItem({
+                    Image(systemName: "circle.fill")
+                })
         }
     }
 }
