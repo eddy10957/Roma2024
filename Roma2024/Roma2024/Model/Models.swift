@@ -89,6 +89,17 @@ struct  Profile {
     var image : String // ai fini del mockup carichiamo tutto in assets e sti cazzi
 }
 
+struct Competitions : Hashable{
+    var discipline : Disciplines
+    var isFavorite : Bool
+    
+    // è una string cosi non ci andiamo a mettere nei cazzi usando le date del cazzo che in swift è un casino
+    var date : String
+    
+    // non andrebbe fatto cosi ma una nuova struttura con data etc ma che senso ha andarsi a perdere cosi, quindi mockup addios
+    var matches : [String]
+}
+
 
 
 
