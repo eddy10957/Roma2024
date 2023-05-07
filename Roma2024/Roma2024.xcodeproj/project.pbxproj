@@ -14,6 +14,8 @@
 		43DD35092A066B3D00BC00CB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DD35082A066B3D00BC00CB /* ProfileView.swift */; };
 		43DD350B2A066B4300BC00CB /* TicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DD350A2A066B4300BC00CB /* TicketsView.swift */; };
 		43DD35102A06D51900BC00CB /* Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DD350F2A06D51900BC00CB /* Styling.swift */; };
+		AAC00ECF2A07BC850094CE85 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC00ECE2A07BC850094CE85 /* Models.swift */; };
+		AAC00ED22A07C14E0094CE85 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC00ED12A07C14E0094CE85 /* ViewModel.swift */; };
 		AAE900542A04FDA2000FAB23 /* Roma2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE900532A04FDA2000FAB23 /* Roma2024App.swift */; };
 		AAE900562A04FDA2000FAB23 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE900552A04FDA2000FAB23 /* TabBarView.swift */; };
 		AAE900582A04FDA3000FAB23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE900572A04FDA3000FAB23 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		43DD35082A066B3D00BC00CB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		43DD350A2A066B4300BC00CB /* TicketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsView.swift; sourceTree = "<group>"; };
 		43DD350F2A06D51900BC00CB /* Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styling.swift; sourceTree = "<group>"; };
+		AAC00ECE2A07BC850094CE85 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		AAC00ED12A07C14E0094CE85 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		AAE900502A04FDA2000FAB23 /* Roma2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roma2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE900532A04FDA2000FAB23 /* Roma2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roma2024App.swift; sourceTree = "<group>"; };
 		AAE900552A04FDA2000FAB23 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -67,6 +71,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		AAC00ECD2A07BC730094CE85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AAC00ECE2A07BC850094CE85 /* Models.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AAC00ED02A07C1400094CE85 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AAC00ED12A07C14E0094CE85 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		AAE900472A04FDA2000FAB23 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +106,8 @@
 		AAE900522A04FDA2000FAB23 /* Roma2024 */ = {
 			isa = PBXGroup;
 			children = (
+				AAC00ED02A07C1400094CE85 /* ViewModel */,
+				AAC00ECD2A07BC730094CE85 /* Model */,
 				AAE900532A04FDA2000FAB23 /* Roma2024App.swift */,
 				43DD350F2A06D51900BC00CB /* Styling.swift */,
 				43ABC9922A06EAD7000F2335 /* Components */,
@@ -177,12 +199,14 @@
 				43ABC9942A06EAF0000F2335 /* CategorySelector.swift in Sources */,
 				AAE900562A04FDA2000FAB23 /* TabBarView.swift in Sources */,
 				AAE900542A04FDA2000FAB23 /* Roma2024App.swift in Sources */,
+				AAC00ED22A07C14E0094CE85 /* ViewModel.swift in Sources */,
 				43DD35102A06D51900BC00CB /* Styling.swift in Sources */,
 				43DD35072A066B3500BC00CB /* MapView.swift in Sources */,
 				43DD35052A066B2F00BC00CB /* CompetitionsView.swift in Sources */,
 				43DD350B2A066B4300BC00CB /* TicketsView.swift in Sources */,
 				43DD35092A066B3D00BC00CB /* ProfileView.swift in Sources */,
 				43DD35032A066B2600BC00CB /* DiscoverView.swift in Sources */,
+				AAC00ECF2A07BC850094CE85 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
