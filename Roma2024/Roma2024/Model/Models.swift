@@ -9,20 +9,44 @@ import Foundation
 
 //MARK:  Disciplines -
 
-enum Disciplines {
-    case sprint, middleDistance, longDistance, hurdles, steepleChase, relays, highJump, poleVault, longJump, tripleJump, shotPut, discThrows, hammerThrow, javelinThrow, decathlon, heptathlon, raceWalking, marathon
+enum Disciplines: String, CaseIterable {
+    case sprint = "Sprint", middleDistance = "Middle Distance", longDistance = "Long Distance",
+         hurdles = "Hurdles", steepleChase = "Steeplechase", relays = "Relays",
+         highJump = "High Jump", poleVault = "Pole Vault", longJump = "Long Jump",
+         tripleJump = "Triple Jump", shotPut = "Shot Put", discThrows = "Discus Throws",
+         hammerThrow = "Hammer Throw", javelinThrow = "Javelin Throw",
+         decathlon = "Decathlon", heptathlon = "Heptathlon",
+         raceWalking = "Race Walking", marathon = "Marathon"
 }
 
 //MARK:  NewsCategory -
 
-enum NewsCategory {
-    case announcements,favorites, sprint, middleDistance, longDistance, hurdles, steepleChase, relays, highJump, poleVault, longJump, tripleJump, shotPut, discThrows, hammerThrow, javelinThrow, decathlon, heptathlon, raceWalking, marathon
+enum NewsCategory  : String , CaseIterable {
+    case announcements = "Announcements",favorites = "Favorites", sprint = "Sprint", middleDistance = "Middle Distance", longDistance = "Long Distance",
+         hurdles = "Hurdles", steepleChase = "Steeplechase", relays = "Relays",
+         highJump = "High Jump", poleVault = "Pole Vault", longJump = "Long Jump",
+         tripleJump = "Triple Jump", shotPut = "Shot Put", discThrows = "Discus Throws",
+         hammerThrow = "Hammer Throw", javelinThrow = "Javelin Throw",
+         decathlon = "Decathlon", heptathlon = "Heptathlon",
+         raceWalking = "Race Walking", marathon = "Marathon"
 }
 
 
 //MARK:  Countries -
-enum Countries {
-    case albania, andorra, austria, belarus, belgium, bosniaAndHerzegovina, bulgaria, croatia, cyprus, czechRepublic, denmark, estonia, finland, france, germany, greece, hungary, iceland, ireland, italy, kosovo, latvia, liechtenstein, lithuania, luxembourg, malta, moldova, monaco, montenegro, netherlands, northMacedonia, norway, poland, portugal, romania, russia, sanMarino, serbia, slovakia, slovenia, spain, sweden, switzerland, ukraine, unitedKingdom
+enum Countries: String, CaseIterable {
+    case albania = "Albania", andorra = "Andorra", austria = "Austria", belarus = "Belarus",
+         belgium = "Belgium", bosniaAndHerzegovina = "Bosnia and Herzegovina", bulgaria = "Bulgaria",
+         croatia = "Croatia", cyprus = "Cyprus", czechRepublic = "Czech Republic", denmark = "Denmark",
+         estonia = "Estonia", finland = "Finland", france = "France", germany = "Germany",
+         greece = "Greece", hungary = "Hungary", iceland = "Iceland", ireland = "Ireland",
+         italy = "Italy", kosovo = "Kosovo", latvia = "Latvia", liechtenstein = "Liechtenstein",
+         lithuania = "Lithuania", luxembourg = "Luxembourg", malta = "Malta", moldova = "Moldova",
+         monaco = "Monaco", montenegro = "Montenegro", netherlands = "Netherlands",
+         northMacedonia = "North Macedonia", norway = "Norway", poland = "Poland",
+         portugal = "Portugal", romania = "Romania", russia = "Russia", sanMarino = "San Marino",
+         serbia = "Serbia", slovakia = "Slovakia", slovenia = "Slovenia", spain = "Spain",
+         sweden = "Sweden", switzerland = "Switzerland", ukraine = "Ukraine",
+         unitedKingdom = "United Kingdom"
 }
 
 
