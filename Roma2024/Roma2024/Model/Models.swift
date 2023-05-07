@@ -64,7 +64,7 @@ struct News : Hashable{
 
 //MARK:  Athletes -
 
-struct  Athletes {
+struct  Athletes : Hashable{
     var name : String
     var surname : String
     var isFavorite : Bool

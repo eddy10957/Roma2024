@@ -12,7 +12,8 @@ class ViewModel : ObservableObject {
     static var shared = ViewModel()
     
     @Published var favoritesDisciplines : [Disciplines] = [
-        .decathlon,
+        .hammerThrow,
+        .javelinThrow,
         .highJump,
         .sprint
     ]
@@ -54,4 +55,6 @@ class ViewModel : ObservableObject {
         Athletes(name: "Thomas", surname: "Röhler", isFavorite: false, country: "Germany", discipline: [.javelinThrow], image: "thomasRohler"),
         Athletes(name: "Katerina", surname: "Stefanidi", isFavorite: true, country: "Greece", discipline: [.poleVault], image: "katerinaStefanidi")
     ]
+    
+    @Published var profile = Profile(name: "John", surname: "Doe", image: "gianmarcoTamberi")
 }
