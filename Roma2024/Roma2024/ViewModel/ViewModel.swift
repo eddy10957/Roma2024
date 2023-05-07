@@ -9,9 +9,15 @@ import Foundation
 
 class viewModel : ObservableObject {
     
-    @Published var favoritesDisciplines : [Disciplines] = []
+    @Published var favoritesDisciplines : [Disciplines] = [
+        .decathlon,
+        .highJump,
+        .sprint
+    ]
     
-    @Published var favoritesCountries : [Countries] = []
+    @Published var favoritesCountries : [Countries] = [
+        .italy
+    ]
     
     @Published var news : [News] = [
         
@@ -32,18 +38,18 @@ class viewModel : ObservableObject {
     @Published var athletes : [Athletes] = [
         Athletes(name: "Dina", surname: "Asher-Smith", isFavorite: false, country: "United Kingdom", discipline: [.sprint, .relays], image: ""),
         Athletes(name: "Karsten", surname: "Warholm", isFavorite: false, country: "Norway", discipline: [.hurdles, .relays], image: ""),
-        Athletes(name: "Gianmarco", surname: "Tamberi", isFavorite: false, country: "Italy", discipline: [.highJump], image: ""),
+        Athletes(name: "Gianmarco", surname: "Tamberi", isFavorite: true, country: "Italy", discipline: [.highJump], image: ""),
         Athletes(name: "Sifan", surname: "Hassan", isFavorite: false, country: "Netherlands", discipline: [.middleDistance, .longDistance], image: ""),
-        Athletes(name: "Malaika", surname: "Mihambo", isFavorite: false, country: "Germany", discipline: [.longJump], image: ""),
+        Athletes(name: "Malaika", surname: "Mihambo", isFavorite: true, country: "Germany", discipline: [.longJump], image: ""),
         Athletes(name: "Jakob", surname: "Ingebrigtsen", isFavorite: false, country: "Norway", discipline: [.middleDistance], image: ""),
         Athletes(name: "Laura", surname: "Muir", isFavorite: false, country: "United Kingdom", discipline: [.middleDistance], image: ""),
         Athletes(name: "Renaud", surname: "Lavillenie", isFavorite: false, country: "France", discipline: [.poleVault], image: ""),
         Athletes(name: "Sandra", surname: "Perković", isFavorite: false, country: "Croatia", discipline: [.discThrows], image: ""),
         Athletes(name: "Armand", surname: "Duplantis", isFavorite: false, country: "Sweden", discipline: [.poleVault], image: ""),
-        Athletes(name: "Mujinga", surname: "Kambundji", isFavorite: false, country: "Switzerland", discipline: [.sprint], image: ""),
+        Athletes(name: "Mujinga", surname: "Kambundji", isFavorite: true, country: "Switzerland", discipline: [.sprint], image: ""),
         Athletes(name: "Filip", surname: "Ingebrigtsen", isFavorite: false, country: "Norway", discipline: [.middleDistance], image: ""),
         Athletes(name: "Christina", surname: "Schwanitz", isFavorite: false, country: "Germany", discipline: [.shotPut], image: ""),
         Athletes(name: "Thomas", surname: "Röhler", isFavorite: false, country: "Germany", discipline: [.javelinThrow], image: ""),
-        Athletes(name: "Katerina", surname: "Stefanidi", isFavorite: false, country: "Greece", discipline: [.poleVault], image: "")
+        Athletes(name: "Katerina", surname: "Stefanidi", isFavorite: true, country: "Greece", discipline: [.poleVault], image: "")
     ]
 }
