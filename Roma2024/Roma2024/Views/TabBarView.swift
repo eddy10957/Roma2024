@@ -16,7 +16,7 @@ struct TabBarView: View {
                 })
             CompetitionsView()
                 .tabItem({
-                    TabItem(icon: "running.small", title: "Competitions")
+                    TabItem(icon: "sprint.small", title: "Competitions")
                 })
             MapView()
                 .tabItem({
