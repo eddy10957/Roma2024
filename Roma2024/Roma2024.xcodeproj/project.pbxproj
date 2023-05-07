@@ -18,6 +18,7 @@
 		AAC00ED22A07C14E0094CE85 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC00ED12A07C14E0094CE85 /* ViewModel.swift */; };
 		AAC00ED42A07CF890094CE85 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC00ED32A07CF890094CE85 /* SplashView.swift */; };
 		AAC00ED62A07EAB10094CE85 /* FloatingMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC00ED52A07EAB10094CE85 /* FloatingMenu.swift */; };
+		AAC00ED82A07F1FC0094CE85 /* NewsCardBig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC00ED72A07F1FC0094CE85 /* NewsCardBig.swift */; };
 		AAE900542A04FDA2000FAB23 /* Roma2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE900532A04FDA2000FAB23 /* Roma2024App.swift */; };
 		AAE900562A04FDA2000FAB23 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE900552A04FDA2000FAB23 /* TabBarView.swift */; };
 		AAE900582A04FDA3000FAB23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE900572A04FDA3000FAB23 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		AAC00ED12A07C14E0094CE85 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		AAC00ED32A07CF890094CE85 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		AAC00ED52A07EAB10094CE85 /* FloatingMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingMenu.swift; sourceTree = "<group>"; };
+		AAC00ED72A07F1FC0094CE85 /* NewsCardBig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCardBig.swift; sourceTree = "<group>"; };
 		AAE900502A04FDA2000FAB23 /* Roma2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roma2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE900532A04FDA2000FAB23 /* Roma2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roma2024App.swift; sourceTree = "<group>"; };
 		AAE900552A04FDA2000FAB23 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			children = (
 				43ABC9932A06EAF0000F2335 /* CategorySelector.swift */,
 				AAC00ED52A07EAB10094CE85 /* FloatingMenu.swift */,
+				AAC00ED72A07F1FC0094CE85 /* NewsCardBig.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				AAE900542A04FDA2000FAB23 /* Roma2024App.swift in Sources */,
 				AAC00ED22A07C14E0094CE85 /* ViewModel.swift in Sources */,
 				43DD35102A06D51900BC00CB /* Styling.swift in Sources */,
+				AAC00ED82A07F1FC0094CE85 /* NewsCardBig.swift in Sources */,
 				AAC00ED42A07CF890094CE85 /* SplashView.swift in Sources */,
 				43DD35072A066B3500BC00CB /* MapView.swift in Sources */,
 				AAC00ED62A07EAB10094CE85 /* FloatingMenu.swift in Sources */,

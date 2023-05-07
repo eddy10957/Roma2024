@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct DiscoverView: View {
+    
+    @EnvironmentObject var viewModel : ViewModel
+    
     @State var showProfile : Bool = false
     @State var showTicket : Bool = false
     var body: some View {
@@ -30,6 +33,23 @@ struct DiscoverView: View {
                     }
                     .padding(.trailing,80)
                 }
+                
+                Text("For You")
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack{
+                        HStack(spacing: 5) {
+                            ForEach(viewModel.news, id:\.self){ news in
+                                NewsCardBig(image: news.image, title: news.title)
+                            }
+                        }
+                        .padding(16)
+                        
+                    }
+                }
+
+                
+               
                 Spacer()
             }
             

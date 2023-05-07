@@ -7,7 +7,9 @@
 
 import Foundation
 
-class viewModel : ObservableObject {
+class ViewModel : ObservableObject {
+    
+    static var shared = ViewModel()
     
     @Published var favoritesDisciplines : [Disciplines] = [
         .decathlon,

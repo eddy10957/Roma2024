@@ -52,7 +52,7 @@ enum Countries: String, CaseIterable {
 
 
 //MARK:  News -
-struct News {
+struct News : Hashable{
     var title : String
     var subtitle: String?
     var articleText : String
