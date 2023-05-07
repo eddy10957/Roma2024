@@ -12,16 +12,31 @@ struct TabBarView: View {
         TabView {
             DiscoverView()
                 .tabItem({
-                    Image(systemName: "circle.fill")
+                    TabItem(icon: "europeanAthletics.small", title: "Discover")
                 })
             CompetitionsView()
                 .tabItem({
-                    Image(systemName: "circle.fill")
+                    TabItem(icon: "running.small", title: "Competitions")
                 })
             MapView()
                 .tabItem({
-                    Image(systemName: "circle.fill")
+                    TabItem(icon: "stadium", title: "Village")
                 })
+        }
+        .tint(.hyperAccent)
+    }
+}
+
+struct TabItem: View {
+    var icon: String
+    var title: String
+    var body: some View {
+        VStack {
+            Image(icon)
+                .renderingMode(.template)
+            Text(title)
+                .font(.largeTitle)
+                .padding()
         }
     }
 }

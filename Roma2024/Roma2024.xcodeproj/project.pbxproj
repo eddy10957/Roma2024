@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43ABC9942A06EAF0000F2335 /* CategorySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ABC9932A06EAF0000F2335 /* CategorySelector.swift */; };
 		43DD35032A066B2600BC00CB /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DD35022A066B2600BC00CB /* DiscoverView.swift */; };
 		43DD35052A066B2F00BC00CB /* CompetitionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DD35042A066B2F00BC00CB /* CompetitionsView.swift */; };
 		43DD35072A066B3500BC00CB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DD35062A066B3500BC00CB /* MapView.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43ABC9932A06EAF0000F2335 /* CategorySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelector.swift; sourceTree = "<group>"; };
 		43DD35022A066B2600BC00CB /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		43DD35042A066B2F00BC00CB /* CompetitionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsView.swift; sourceTree = "<group>"; };
 		43DD35062A066B3500BC00CB /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -44,6 +46,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43ABC9922A06EAD7000F2335 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				43ABC9932A06EAF0000F2335 /* CategorySelector.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		43DD350C2A066B4B00BC00CB /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +88,7 @@
 			children = (
 				AAE900532A04FDA2000FAB23 /* Roma2024App.swift */,
 				43DD350F2A06D51900BC00CB /* Styling.swift */,
+				43ABC9922A06EAD7000F2335 /* Components */,
 				43DD350C2A066B4B00BC00CB /* Views */,
 				AAE900572A04FDA3000FAB23 /* Assets.xcassets */,
 				AAE900592A04FDA3000FAB23 /* Preview Content */,
@@ -163,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43ABC9942A06EAF0000F2335 /* CategorySelector.swift in Sources */,
 				AAE900562A04FDA2000FAB23 /* TabBarView.swift in Sources */,
 				AAE900542A04FDA2000FAB23 /* Roma2024App.swift in Sources */,
 				43DD35102A06D51900BC00CB /* Styling.swift in Sources */,
@@ -299,7 +311,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Roma2024/Preview Content\"";
-				DEVELOPMENT_TEAM = 3DWPN6Q5Q9;
+				DEVELOPMENT_TEAM = 7TD72JJG8D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -328,7 +340,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Roma2024/Preview Content\"";
-				DEVELOPMENT_TEAM = 3DWPN6Q5Q9;
+				DEVELOPMENT_TEAM = 7TD72JJG8D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
