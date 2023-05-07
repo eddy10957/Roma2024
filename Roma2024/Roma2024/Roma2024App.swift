@@ -9,9 +9,22 @@ import SwiftUI
 
 @main
 struct Roma2024App: App {
+    @State var showSplashScreen = true
     var body: some Scene {
         WindowGroup {
-            TabBarView()
+            ZStack {
+                if showSplashScreen {
+                    SplashView()
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+                                showSplashScreen = false
+                            }
+                        }
+                } else {
+                    TabBarView()
+                }
+            }
+            .animation(.easeInOut(duration: 0.35), value: showSplashScreen)
         }
     }
 }
