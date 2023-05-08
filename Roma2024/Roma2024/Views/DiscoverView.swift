@@ -40,7 +40,21 @@ struct DiscoverView: View {
                     HStack{
                         HStack(spacing: 5) {
                             ForEach(viewModel.news, id:\.self){ news in
-                                NewsCardBig(image: news.image, title: news.title)
+                                NewsCardBig(news: news)
+                            }
+                        }
+                        .padding(16)
+                        
+                    }
+                }
+                
+                Text("More")
+                
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack{
+                        VStack(alignment:.leading, spacing: 5) {
+                            ForEach(viewModel.news, id:\.self){ news in
+                                NewsCardSmall(news: news)
                             }
                         }
                         .padding(16)

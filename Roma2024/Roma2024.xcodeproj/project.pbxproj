@@ -20,6 +20,7 @@
 		AAC00ED62A07EAB10094CE85 /* FloatingMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC00ED52A07EAB10094CE85 /* FloatingMenu.swift */; };
 		AAC00ED82A07F1FC0094CE85 /* NewsCardBig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC00ED72A07F1FC0094CE85 /* NewsCardBig.swift */; };
 		AADA83252A081B2F001E9081 /* CompetitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA83242A081B2F001E9081 /* CompetitionCell.swift */; };
+		AADA83272A08CCE1001E9081 /* NewsCardSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA83262A08CCE1001E9081 /* NewsCardSmall.swift */; };
 		AAE900542A04FDA2000FAB23 /* Roma2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE900532A04FDA2000FAB23 /* Roma2024App.swift */; };
 		AAE900562A04FDA2000FAB23 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE900552A04FDA2000FAB23 /* TabBarView.swift */; };
 		AAE900582A04FDA3000FAB23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE900572A04FDA3000FAB23 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		AAC00ED52A07EAB10094CE85 /* FloatingMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingMenu.swift; sourceTree = "<group>"; };
 		AAC00ED72A07F1FC0094CE85 /* NewsCardBig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCardBig.swift; sourceTree = "<group>"; };
 		AADA83242A081B2F001E9081 /* CompetitionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionCell.swift; sourceTree = "<group>"; };
+		AADA83262A08CCE1001E9081 /* NewsCardSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCardSmall.swift; sourceTree = "<group>"; };
 		AAE900502A04FDA2000FAB23 /* Roma2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roma2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE900532A04FDA2000FAB23 /* Roma2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roma2024App.swift; sourceTree = "<group>"; };
 		AAE900552A04FDA2000FAB23 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				AADA83242A081B2F001E9081 /* CompetitionCell.swift */,
 				AAC00ED52A07EAB10094CE85 /* FloatingMenu.swift */,
 				AAC00ED72A07F1FC0094CE85 /* NewsCardBig.swift */,
+				AADA83262A08CCE1001E9081 /* NewsCardSmall.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				43DD350B2A066B4300BC00CB /* TicketsView.swift in Sources */,
 				43DD35092A066B3D00BC00CB /* ProfileView.swift in Sources */,
 				43DD35032A066B2600BC00CB /* DiscoverView.swift in Sources */,
+				AADA83272A08CCE1001E9081 /* NewsCardSmall.swift in Sources */,
 				AAC00ECF2A07BC850094CE85 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

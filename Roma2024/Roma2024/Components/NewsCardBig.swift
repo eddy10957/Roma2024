@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct NewsCardBig: View {
-    var image : String
-    var title : String
+    var news : News
     
     var body: some View {
         ZStack{
-            Image(image)
+            Image(news.image)
                 .resizable()
                 .frame(width: 200,height: 100)
                 .overlay(alignment: .bottomLeading, content: {
-                    Text(title)
+                    Text(news.title)
                         .foregroundColor(.white)
                         .font(.caption)
                 })
@@ -25,8 +24,8 @@ struct NewsCardBig: View {
     }
 }
 
-struct NewsCardBig_Previews: PreviewProvider {
-    static var previews: some View {
-        NewsCardBig(image: "", title: "")
-    }
-}
+//struct NewsCardBig_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NewsCardBig(image: "", title: "")
+//    }
+//}
