@@ -13,6 +13,16 @@ struct DiscoverView: View {
     
     @State var showProfile : Bool = false
     @State var showTicket : Bool = false
+    @State var selectedCategory : NewsCategory = .none
+    
+    var filteredNews: [News] {
+        if selectedCategory == .none {
+            return viewModel.news
+        }else{
+            return viewModel.news.filter({$0.discipline == selectedCategory})
+        }
+    }
+    
     var body: some View {
         
         ZStack{
@@ -25,6 +35,9 @@ struct DiscoverView: View {
                                     Text(category.rawValue)
                                         .font(.headline)
                                         .padding()
+                                        .onTapGesture {
+                                            selectedCategory = category
+                                        }
                                 }
                             }
                             .padding(16)
@@ -53,7 +66,7 @@ struct DiscoverView: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack{
                         VStack(alignment:.leading, spacing: 5) {
-                            ForEach(viewModel.news, id:\.self){ news in
+                            ForEach(filteredNews, id:\.self){ news in
                                 NewsCardSmall(news: news)
                             }
                         }

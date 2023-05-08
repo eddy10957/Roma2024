@@ -22,7 +22,7 @@ enum Disciplines: String, CaseIterable {
 //MARK:  NewsCategory -
 
 enum NewsCategory  : String , CaseIterable {
-    case announcements = "Announcements",favorites = "Favorites", sprint = "Sprint", middleDistance = "Middle Distance", longDistance = "Long Distance",
+    case  none = "None", announcements = "Announcements",favorites = "Favorites",  sprint = "Sprint", middleDistance = "Middle Distance", longDistance = "Long Distance",
          hurdles = "Hurdles", steepleChase = "Steeplechase", relays = "Relays",
          highJump = "High Jump", poleVault = "Pole Vault", longJump = "Long Jump",
          tripleJump = "Triple Jump", shotPut = "Shot Put", discThrows = "Discus Throws",
