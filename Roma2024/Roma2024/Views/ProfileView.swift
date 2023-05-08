@@ -14,7 +14,7 @@ struct ProfileView: View {
     @State var notificationToggle : Bool = false
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
+        VStack(spacing: 20) {
             
             profileHeader
             
@@ -49,7 +49,22 @@ struct ProfileView: View {
                 Divider()
             }
             
-            Toggle("Notifications", isOn: $notificationToggle)
+            VStack(spacing: 20) {
+                Toggle("Notifications", isOn: $notificationToggle)
+                
+                Spacer()
+                    .frame(maxHeight: 40)
+                
+                Button(action: {
+                    
+                }, label: {
+                    Text("Privacy Policy")
+                        .font(.footnote)
+                        .underline(true)
+                })
+            }
+            
+            
             Spacer()
             
         }
