@@ -12,12 +12,11 @@ struct CategorySelector: View {
     var body: some View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    HStack {
                         ForEach(NewsCategory.allCases, id: \.self) { category in
                             VStack(alignment: .center, spacing: 0){
                                 Text(category.rawValue)
                                     .font(.callout)
-                                    .padding(.horizontal)
+                                    .padding(.horizontal, 5)
                                     .foregroundColor(selectedCategory == category ? .hyperAccent : .black)
                                     .onTapGesture {
                                         selectedCategory = category
@@ -31,11 +30,9 @@ struct CategorySelector: View {
                             }
                         }
                     }
-                    .padding(16)
-                    
-                }
+                .padding(.leading)
             }
-            .padding(.trailing,80)
+            .padding(.trailing, 80)
     }
 }
 
