@@ -27,9 +27,9 @@ struct FloatingMenu: View {
                 }, title: "Tickets", image: "ticket.fill", expand: $expand, offset: -40)
             }
         }
-        .padding()
     }
 }
+
 // MARK: Button to open menu
 struct MainButton: View {
     var action: () -> Void

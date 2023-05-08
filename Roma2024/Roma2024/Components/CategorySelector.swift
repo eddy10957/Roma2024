@@ -10,24 +10,24 @@ import SwiftUI
 struct CategorySelector: View {
     @Binding var selectedCategory: NewsCategory
     var body: some View {
-        HStack{
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack{
-                    HStack( spacing: 5) {
+                HStack {
+                    HStack {
                         ForEach(NewsCategory.allCases, id: \.self) { category in
-                            VStack(alignment: .leading){
+                            VStack(alignment: .center, spacing: 0){
                                 Text(category.rawValue)
-                                    .font(.headline)
-                                    .padding()
+                                    .font(.callout)
+                                    .padding(.horizontal)
+                                    .foregroundColor(selectedCategory == category ? .hyperAccent : .black)
                                     .onTapGesture {
                                         selectedCategory = category
-                                    }
-                                
-                                if category == selectedCategory {
-                                    Rectangle()
-                                        .frame(height: 2)
-                                        .foregroundColor(Color.hyperAccent)
-                                }
+                                    } 
+//                                if category == selectedCategory {
+//                                    Rectangle()
+//                                        .frame(height: 3)
+//                                        .frame(maxWidth: 20)
+//                                        .foregroundColor(Color.hyperAccent)
+//                                }
                             }
                         }
                     }
@@ -36,7 +36,6 @@ struct CategorySelector: View {
                 }
             }
             .padding(.trailing,80)
-        }
     }
 }
 
