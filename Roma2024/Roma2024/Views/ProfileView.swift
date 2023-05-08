@@ -40,11 +40,14 @@ struct ProfileView: View {
                 
                 discipline
             
-            
-            Text("Settings")
-                .font(.title2)
-            
-            Divider()
+            Spacer()
+                .frame(maxHeight: 40)
+            VStack(alignment: .leading, spacing: 0) {
+                Text("Settings")
+                    .font(.title2)
+                
+                Divider()
+            }
             
             Toggle("Notifications", isOn: $notificationToggle)
             Spacer()
@@ -76,13 +79,13 @@ struct ProfileView: View {
                 Text(viewModel.profile.surname)
                     .font(.title2)
             }
+            Spacer()
         }
-        .padding()
     }
     
     /// Nations ScrollView
     private var nations: some View {
-        return VStack(alignment: .leading, spacing: 2) {
+        return VStack(alignment: .leading, spacing: 3) {
             Text("Nations")
                 .font(.headline)
             ScrollView(.horizontal) {
@@ -97,7 +100,7 @@ struct ProfileView: View {
     
     /// Athletes ScrollView
     private var athletes: some View {
-        return VStack(alignment: .leading, spacing: 2) {
+        return VStack(alignment: .leading, spacing: 3) {
             Text("Athletes")
                 .font(.headline)
             ScrollView(.horizontal){
@@ -114,7 +117,7 @@ struct ProfileView: View {
     
     /// Disciplines ScrollView
     private var discipline: some View {
-        return VStack(alignment: .leading, spacing: 2) {
+        return VStack(alignment: .leading, spacing: 3) {
             Text("Disciplines")
                 .font(.headline)
             ScrollView(.horizontal){
