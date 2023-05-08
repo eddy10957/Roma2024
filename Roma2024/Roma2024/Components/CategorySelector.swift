@@ -30,7 +30,8 @@ struct CategorySelector: View {
                             }
                         }
                     }
-                .padding(.leading)
+                .padding([.leading, .top])
+                .padding(.bottom, 10)
             }
             .padding(.trailing, 80)
     }
