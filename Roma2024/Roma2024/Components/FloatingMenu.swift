@@ -17,10 +17,6 @@ struct FloatingMenu: View {
         VStack {
             MainButton(action: {
                 expand.toggle()
-                //                        DispatchQueue.main.asyncAfter(deadline: .now() + .microseconds(500)) {
-                //                            showTitles.toggle()
-                //                        }
-                
             }, expand: $expand)
             if !expand {
                 MenuButton(action: {

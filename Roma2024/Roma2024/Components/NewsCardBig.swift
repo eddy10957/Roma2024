@@ -11,16 +11,23 @@ struct NewsCardBig: View {
     var news : News
     
     var body: some View {
-        VStack{
+        ZStack {
             Image(news.image)
                 .resizable()
-                .frame(width: 200,height: 100)
-                
-            Text(news.title)
-                .font(.caption)
-                .multilineTextAlignment(.leading)
-                .frame(width: 200)
+                .overlay(alignment: .bottomLeading) {
+                    ZStack(alignment: .bottomLeading) {
+                        LinearGradient(colors: [.black, .black.opacity(0.8), .black.opacity(0.5), .black.opacity(0.2), .black.opacity(0.1)], startPoint: .bottom, endPoint: .center)
+                            .frame(width: 200)
+                        Text(news.title)
+                            .font(.caption)
+                            .bold()
+                            .multilineTextAlignment(.leading)
+                            .foregroundColor(.body)
+                            .padding()
+                    }
+                }
         }
+        .frame(width: 200,height: 150)
     }
 }
 

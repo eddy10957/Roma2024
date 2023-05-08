@@ -60,7 +60,7 @@ struct DiscoverView: View {
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack{
-                            HStack( alignment:.top ,spacing: 5) {
+                            HStack(alignment:.top) {
                                 ForEach(viewModel.news, id:\.self){ news in
                                     NavigationLink(destination: OpenNewsView(news: news), label: {NewsCardBig(news: news)})
                                     
