@@ -26,11 +26,13 @@ struct DiscoverView: View {
     var body: some View {
         NavigationView{
             ZStack{
-                VStack(alignment: .leading){
+                VStack(alignment: .leading, spacing: 3){
                     CategorySelector(selectedCategory: $selectedCategory)
                     
                     Text("For You")
-                        .padding()
+                        .font(.headline)
+                        .bold()
+                        .padding(.horizontal)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack{
@@ -46,7 +48,9 @@ struct DiscoverView: View {
                     }
                     
                     Text("More")
-                        .padding()
+                        .font(.headline)
+                        .bold()
+                        .padding(.horizontal)
                     
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack{
