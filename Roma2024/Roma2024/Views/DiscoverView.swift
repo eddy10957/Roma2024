@@ -24,92 +24,94 @@ struct DiscoverView: View {
     }
     
     var body: some View {
-        
-        ZStack{
-            VStack(alignment: .leading){
-                HStack{
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack{
-                            HStack(spacing: 5) {
-                                ForEach(NewsCategory.allCases, id: \.self) { category in
-                                    VStack(alignment: .leading){
-                                        Text(category.rawValue)
-                                            .font(.headline)
-                                            .padding()
-                                            .onTapGesture {
-                                                selectedCategory = category
+        NavigationView{
+            ZStack{
+                VStack(alignment: .leading){
+                    HStack{
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack{
+                                HStack( spacing: 5) {
+                                    ForEach(NewsCategory.allCases, id: \.self) { category in
+                                        VStack(alignment: .leading){
+                                            Text(category.rawValue)
+                                                .font(.headline)
+                                                .padding()
+                                                .onTapGesture {
+                                                    selectedCategory = category
+                                                }
+                                            
+                                            if category == selectedCategory {
+                                                Rectangle()
+                                                    .frame(height: 2)
+                                                    .foregroundColor(Color.hyperAccent)
                                             }
-                                        
-                                        if category == selectedCategory {
-                                            Rectangle()
-                                                .frame(height: 2)
-                                                .foregroundColor(Color.hyperAccent)
                                         }
                                     }
+                                }
+                                .padding(16)
+                                
+                            }
+                        }
+                        .padding(.trailing,80)
+                    }
+                    
+                    Text("For You")
+                        .padding()
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack{
+                            HStack( alignment:.top ,spacing: 5) {
+                                ForEach(viewModel.news, id:\.self){ news in
+                                    NavigationLink(destination: OpenNewsView(news: news), label: {NewsCardBig(news: news)})
+                                    
                                 }
                             }
                             .padding(16)
                             
                         }
                     }
-                    .padding(.trailing,80)
-                }
-                
-                Text("For You")
-                    .padding()
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack{
-                        HStack( alignment:.top ,spacing: 5) {
-                            ForEach(viewModel.news, id:\.self){ news in
-                                NewsCardBig(news: news)
-                            }
-                        }
-                        .padding(16)
-                        
-                    }
-                }
-                
-                Text("More")
-                    .padding()
-                
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack{
-                        VStack(alignment:.leading, spacing: 5) {
-                            ForEach(filteredNews, id:\.self){ news in
-                                NewsCardSmall(news: news)
-                            }
-                        }
-                        .padding(16)
-                        
-                    }
-                }
-                
-                
-                
-                Spacer()
-            }
-            
-            VStack{
-                HStack{
-                    Spacer()
-                    FloatingMenu(buttonArray: ["person","ticket"], onClick: { buttonClicked in
-                        if buttonClicked == "person"{
-                            showProfile.toggle()
-                        }else if buttonClicked == "ticket"{
-                            showTicket.toggle()
-                        }
-                    })
                     
+                    Text("More")
+                        .padding()
+                    
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack{
+                            VStack(alignment:.leading, spacing: 5) {
+                                ForEach(filteredNews, id:\.self){ news in
+                                    NewsCardSmall(news: news)
+                                }
+                            }
+                            .padding(16)
+                            
+                        }
+                    }
+                    
+                    
+                    
+                    Spacer()
                 }
-                Spacer()
+                
+                VStack{
+                    HStack{
+                        Spacer()
+                        FloatingMenu(buttonArray: ["person","ticket"], onClick: { buttonClicked in
+                            if buttonClicked == "person"{
+                                showProfile.toggle()
+                            }else if buttonClicked == "ticket"{
+                                showTicket.toggle()
+                            }
+                        })
+                        
+                    }
+                    Spacer()
+                }
             }
-        }
-        .fullScreenCover(isPresented: $showProfile){
-            ProfileView()
-        }
-        .fullScreenCover(isPresented: $showTicket){
-            TicketsView()
+            .fullScreenCover(isPresented: $showProfile){
+                ProfileView()
+            }
+            .fullScreenCover(isPresented: $showTicket){
+                TicketsView()
+            }
         }
     }
 }
