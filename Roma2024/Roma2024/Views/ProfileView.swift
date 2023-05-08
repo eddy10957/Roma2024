@@ -31,8 +31,6 @@ struct ProfileView: View {
             
             Divider()
             
-            
-            
             VStack(alignment: .leading) {
                 nations
                 
@@ -59,6 +57,8 @@ struct ProfileView: View {
                 .padding()
         }
     }
+    
+    /// Header with profile picture, name and surname
     private var profileHeader: some View {
         return HStack {
             Image(viewModel.profile.image)
@@ -77,10 +77,11 @@ struct ProfileView: View {
         .padding()
     }
     
+    /// Nations ScrollView
     private var nations: some View {
         return Group {
             Text("Nations")
-                .font(.title2)
+                .font(.headline)
             ScrollView(.horizontal) {
                 HStack(spacing: 5) {
                     ForEach(viewModel.favoritesCountries, id: \.self) { country in
@@ -91,10 +92,11 @@ struct ProfileView: View {
         }
     }
     
+    /// Athletes ScrollView
     private var athletes: some View {
         return Group {
             Text("Athletes")
-                .font(.title2)
+                .font(.headline)
             ScrollView(.horizontal){
                 HStack(spacing: 5){
                     ForEach(viewModel.athletes.filter({
@@ -107,10 +109,11 @@ struct ProfileView: View {
         }
     }
     
+    /// Disciplines ScrollView
     private var discipline: some View {
         return Group {
             Text("Disciplines")
-                .font(.title2)
+                .font(.headline)
             ScrollView(.horizontal){
                 HStack(spacing: 5){
                     ForEach(viewModel.favoritesDisciplines, id: \.self) { discipline in
@@ -122,6 +125,7 @@ struct ProfileView: View {
     }
 }
 
+/// Type to define the type of the favorite in order to create its circle inside
 enum FavoriteType {
     case nation, athlete, discipline
 }
@@ -140,19 +144,19 @@ struct FavoritesElement: View {
                 .scaledToFill()
                 .clipShape(Circle())
                 .frame(width: 50,height: 50)
+            
         } else if favoriteType == .discipline {
             ZStack {
+                Circle()
+                    .frame(width: 50,height: 50)
+                    .foregroundColor(Color.primaryBackground)
                 Image(imageName.lowercased())
+                    .renderingMode(.template)
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 40,height: 40)
-                
-                
-                Circle()
-                    .stroke(lineWidth: 2)
-                    .frame(width: 50,height: 50)
+                    .foregroundColor(.white)
+                    .frame(width: 40, height: 40)
             }
-            .foregroundColor(Color.primaryDetail)
         }
     }
 }
