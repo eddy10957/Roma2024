@@ -84,9 +84,11 @@ struct  Tickets {
 //MARK:  Profile -
 
 struct  Profile {
+    
     var name : String
     var surname : String
     var image : String // ai fini del mockup carichiamo tutto in assets e sti cazzi
+    
 }
 
 struct Competitions : Hashable{
