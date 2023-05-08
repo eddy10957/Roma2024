@@ -35,8 +35,6 @@ struct CompetitionCell: View {
             Text(competition.discipline.rawValue)
             
             Spacer()
-            
-            Image(systemName: "chevron.right")
         }
     }
 }

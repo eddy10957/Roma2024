@@ -19,7 +19,7 @@ struct CompetitionsView: View {
     var body: some View {
         NavigationView {
             
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 
                 VStack (alignment: .leading) {
                     
@@ -30,12 +30,20 @@ struct CompetitionsView: View {
                     
                     ForEach(viewModel.competitions.filter({viewModel.favoritesDisciplines.contains($0.discipline)}).filter({$0.date == selectedDate
                     }).sorted(by: {$0.discipline.rawValue < $1.discipline.rawValue}), id: \.self){ competition in
-                        NavigationLink {
-                            CompetitionsByDisciplineView(competition: competition)
-                        } label: {
+                        DisclosureGroup(content: {
+                            ForEach(viewModel.matches, id: \.self) { match in
+                                MatchCell(name: match.name, time: match.time, destination: CompetitionsByDisciplineView(competition: competition))
+                                    .padding(.vertical, 5)
+                            }
+                        }, label: {
                             CompetitionCell(competition: competition)
-                        }
-                        .padding(.vertical, 5)
+                        })
+//                        NavigationLink {
+//                            CompetitionsByDisciplineView(competition: competition)
+//                        } label: {
+//                            CompetitionCell(competition: competition)
+//                        }
+//                        .padding(.vertical, 5)
                     }
                     
                     
@@ -44,19 +52,42 @@ struct CompetitionsView: View {
                     
                     ForEach(viewModel.competitions.filter({!viewModel.favoritesDisciplines.contains($0.discipline)}).filter({$0.date == selectedDate
                     }).sorted(by: {$0.discipline.rawValue < $1.discipline.rawValue}), id: \.self){ competition in
-                        NavigationLink {
-                            CompetitionsByDisciplineView(competition: competition)
-                        } label: {
+                        DisclosureGroup(content: {
+                            ForEach(viewModel.matches, id: \.self) { match in
+                                MatchCell(name: match.name, time: match.time, destination: CompetitionsByDisciplineView(competition: competition))
+                                    .padding(.vertical, 5)
+                            }
+                        }, label: {
                             CompetitionCell(competition: competition)
-                            
-                        }
-                        .padding(.vertical, 5)
+                        })
+
                     }
                 }
             }
             .padding()
             .tint(Color.primaryBackground)
         }
+    }
+}
+
+struct MatchCell<Destination: View>: View {
+    var name: String
+    var time: String
+    var destination: Destination
+    var body: some View {
+        NavigationLink(destination: destination, label: {
+            HStack {
+                Spacer()
+                    .frame(maxWidth: 20)
+                Image(systemName: "medal.fill")
+                    .foregroundColor(.primaryBackground)
+                Text(name)
+                    .font(.footnote)
+                Spacer()
+                Text(time)
+                    .font(.footnote)
+            }
+        })
     }
 }
 
