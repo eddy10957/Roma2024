@@ -11,7 +11,10 @@ struct CompetitionsView: View {
     
     @EnvironmentObject var viewModel: ViewModel
     
+    @State var selectedDate = "Ven\n 07.05"
+    
     var days : [String] = ["Ven\n 07.05","Sab\n 08.05","Dom\n 09.05","Lun\n 10.05","Mar\n 11.05","Mer\n 12.05"]
+    
     
     //TODO:  showing competition filtered by date , dato che ho messo che non è una data facciamo il controllo se le stringhe sono uguali
     
@@ -27,6 +30,9 @@ struct CompetitionsView: View {
                                     Text(day)
                                         .lineLimit(2)
                                         .multilineTextAlignment(.center)
+                                        .onTapGesture {
+                                            selectedDate = day
+                                        }
                                 }
                             }
                             .padding(16)
@@ -39,7 +45,8 @@ struct CompetitionsView: View {
                 Text("Favorites")
                     .font(.title)
                 
-                ForEach(viewModel.competitions.filter({viewModel.favoritesDisciplines.contains($0.discipline)}), id: \.self){ competition in
+                ForEach(viewModel.competitions.filter({viewModel.favoritesDisciplines.contains($0.discipline)}).filter({$0.date == selectedDate
+                }), id: \.self){ competition in
                     CompetitionCell(competition: competition)
                         .padding()
                 }
@@ -50,7 +57,8 @@ struct CompetitionsView: View {
                 
                 // Si vedono delle stelle perché so strunz
                 
-                ForEach(viewModel.competitions.sorted(by: {$0.discipline.rawValue < $1.discipline.rawValue}), id: \.self){ competition in
+                ForEach(viewModel.competitions.filter({!viewModel.favoritesDisciplines.contains($0.discipline)}).filter({$0.date == selectedDate
+                }).sorted(by: {$0.discipline.rawValue < $1.discipline.rawValue}), id: \.self){ competition in
                     CompetitionCell(competition: competition)
                         .padding()
                 }
