@@ -17,7 +17,7 @@ struct NewsCardBig: View {
                 .overlay(alignment: .bottomLeading) {
                     ZStack(alignment: .bottomLeading) {
                         LinearGradient(colors: [.black, .black.opacity(0.8), .black.opacity(0.5), .black.opacity(0.2), .black.opacity(0.1)], startPoint: .bottom, endPoint: .center)
-                            .frame(width: 200)
+                            .frame(width: 300)
                         Text(news.title)
                             .font(.caption)
                             .bold()
@@ -27,7 +27,8 @@ struct NewsCardBig: View {
                     }
                 }
         }
-        .frame(width: 200,height: 150)
+        .cornerRadius(15)
+        .frame(width: 300,height: 200)
     }
 }
 
