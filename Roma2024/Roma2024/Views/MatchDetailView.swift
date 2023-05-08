@@ -13,13 +13,28 @@ struct MatchDetailView: View {
     @State var competition : Competitions
     var body: some View {
         
-        ScrollView {
-            Text(competition.date.suffix(5) + " \(match.time)")
-            Text(match.name)
-            Image(competition.discipline.rawValue.lowercased())
-                .resizable()
-                .scaledToFit()
-                .frame(width: 150)
+        VStack(alignment: .leading) {
+            ScrollView {
+                Text(competition.date.suffix(5) + " \(match.time)")
+                Text(match.name)
+                Image(competition.discipline.rawValue.lowercased())
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 150)
+                
+                List(match.athletes, id: \.self) { athlete in
+                    HStack {
+                        Image(athlete.image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50)
+                        Text(athlete.name)
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                }
+                
+            }
         }
     }
 }

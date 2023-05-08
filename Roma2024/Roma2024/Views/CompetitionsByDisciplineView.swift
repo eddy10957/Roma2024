@@ -13,21 +13,21 @@ struct CompetitionsByDisciplineView: View {
     @State var competition : Competitions
 
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            HStack {
-                Text("Today " + (competition.date.suffix(5)))
-                Spacer()
-            }
-            .padding(.horizontal)
-            HStack {
-                Text(competition.discipline.rawValue)
-                    .font(.title)
-                Spacer()
-            }
-            .padding(.horizontal)
-            
-            if competition.matches.isEmpty == false {
-                ForEach(competition.matches, id: \.self) { match in
+        VStack(alignment: .leading) {
+            ScrollView(showsIndicators: false) {
+                HStack {
+                    Text("Today " + (competition.date.suffix(5)))
+                    Spacer()
+                }
+                .padding(.horizontal)
+                HStack {
+                    Text(competition.discipline.rawValue)
+                        .font(.title)
+                    Spacer()
+                }
+                .padding(.horizontal)
+                
+                ForEach(viewModel.matches, id: \.self) { match in
                     NavigationLink {
                         MatchDetailView(match: match, competition: competition)
                     } label: {
@@ -37,17 +37,20 @@ struct CompetitionsByDisciplineView: View {
                                 .scaledToFit()
                                 .frame(width: 50)
                             Text(match.name)
+                                .multilineTextAlignment(.leading)
                             Spacer()
                             Text(match.time)
                         }
                     }
                     .padding(.horizontal)
                 }
+                
+                
+                
             }
             
-            
+            Spacer()
         }
-        Spacer()
     }
 }
 
