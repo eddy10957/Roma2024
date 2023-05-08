@@ -85,24 +85,6 @@ struct DiscoverView: View {
                             
                         }
                     }
-                    
-                    
-                    
-                    Spacer()
-                }
-                
-                VStack{
-                    HStack{
-                        Spacer()
-                        FloatingMenu(buttonArray: ["person","ticket"], onClick: { buttonClicked in
-                            if buttonClicked == "person"{
-                                showProfile.toggle()
-                            }else if buttonClicked == "ticket"{
-                                showTicket.toggle()
-                            }
-                        })
-                        
-                    }
                     Spacer()
                 }
             }

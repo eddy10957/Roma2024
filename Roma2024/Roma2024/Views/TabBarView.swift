@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TabBarView: View {
+    @State var showProfile = false
+    @State var showTickets = false
     var body: some View {
         TabView {
             DiscoverView()
@@ -24,6 +26,15 @@ struct TabBarView: View {
                 })
         }
         .tint(.hyperAccent)
+        .overlay(alignment: .topTrailing) {
+            FloatingMenu(showProfile: $showProfile, showTickets: $showTickets)
+        }
+        .fullScreenCover(isPresented: $showProfile){
+            ProfileView()
+        }
+        .fullScreenCover(isPresented: $showTickets){
+            TicketsView()
+        }
     }
 }
 
