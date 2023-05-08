@@ -82,5 +82,37 @@ class ViewModel : ObservableObject {
         
         
     ]
+    @Published var matches : [Match] = [
+        Match(name: "100m Men's Final", time: "10:00 AM", athletes: [Athletes(name: "Dina", surname: "Asher-Smith", isFavorite: false, country: "United Kingdom", discipline: [.sprint, .relays], image: "dinaAsher-Smith"),
+                                                                     Athletes(name: "Karsten", surname: "Warholm", isFavorite: false, country: "Norway", discipline: [.hurdles, .relays], image: "karstenWarholm"),
+                                                                     Athletes(name: "Gianmarco", surname: "Tamberi", isFavorite: true, country: "Italy", discipline: [.highJump], image: "gianmarcoTamberi")]),
+        Match(name: "Long Jump Women's Qualification", time: "11:30 AM", athletes: [Athletes(name: "Dina", surname: "Asher-Smith", isFavorite: false, country: "United Kingdom", discipline: [.sprint, .relays], image: "dinaAsher-Smith"),
+                                                                                    Athletes(name: "Karsten", surname: "Warholm", isFavorite: false, country: "Norway", discipline: [.hurdles, .relays], image: "karstenWarholm"),
+                                                                                    Athletes(name: "Gianmarco", surname: "Tamberi", isFavorite: true, country: "Italy", discipline: [.highJump], image: "gianmarcoTamberi")]),
+        Match(name: "Shot Put Men's Final", time: "02:00 PM", athletes: [Athletes(name: "Dina", surname: "Asher-Smith", isFavorite: false, country: "United Kingdom", discipline: [.sprint, .relays], image: "dinaAsher-Smith"),
+                                                                         Athletes(name: "Karsten", surname: "Warholm", isFavorite: false, country: "Norway", discipline: [.hurdles, .relays], image: "karstenWarholm"),
+                                                                         Athletes(name: "Gianmarco", surname: "Tamberi", isFavorite: true, country: "Italy", discipline: [.highJump], image: "gianmarcoTamberi")]),
+        Match(name: "400m Women's Final", time: "04:15 PM", athletes: [Athletes(name: "Dina", surname: "Asher-Smith", isFavorite: false, country: "United Kingdom", discipline: [.sprint, .relays], image: "dinaAsher-Smith"),
+                                                                       Athletes(name: "Karsten", surname: "Warholm", isFavorite: false, country: "Norway", discipline: [.hurdles, .relays], image: "karstenWarholm"),
+                                                                       Athletes(name: "Gianmarco", surname: "Tamberi", isFavorite: true, country: "Italy", discipline: [.highJump], image: "gianmarcoTamberi")]),
+        Match(name: "High Jump Men's Qualification", time: "09:30 AM", athletes: [Athletes(name: "Dina", surname: "Asher-Smith", isFavorite: false, country: "United Kingdom", discipline: [.sprint, .relays], image: "dinaAsher-Smith"),
+                                                                                  Athletes(name: "Karsten", surname: "Warholm", isFavorite: false, country: "Norway", discipline: [.hurdles, .relays], image: "karstenWarholm"),
+                                                                                  Athletes(name: "Gianmarco", surname: "Tamberi", isFavorite: true, country: "Italy", discipline: [.highJump], image: "gianmarcoTamberi")]),
+        Match(name: "200m Women's Semifinal", time: "11:00 AM", athletes: [Athletes(name: "Dina", surname: "Asher-Smith", isFavorite: false, country: "United Kingdom", discipline: [.sprint, .relays], image: "dinaAsher-Smith"),
+                                                                           Athletes(name: "Karsten", surname: "Warholm", isFavorite: false, country: "Norway", discipline: [.hurdles, .relays], image: "karstenWarholm"),
+                                                                           Athletes(name: "Gianmarco", surname: "Tamberi", isFavorite: true, country: "Italy", discipline: [.highJump], image: "gianmarcoTamberi")]),
+        Match(name: "Discus Throw Men's Final", time: "01:45 PM", athletes: [Athletes(name: "Dina", surname: "Asher-Smith", isFavorite: false, country: "United Kingdom", discipline: [.sprint, .relays], image: "dinaAsher-Smith"),
+                                                                             Athletes(name: "Karsten", surname: "Warholm", isFavorite: false, country: "Norway", discipline: [.hurdles, .relays], image: "karstenWarholm"),
+                                                                             Athletes(name: "Gianmarco", surname: "Tamberi", isFavorite: true, country: "Italy", discipline: [.highJump], image: "gianmarcoTamberi")]),
+        Match(name: "800m Men's Final", time: "03:30 PM", athletes: [Athletes(name: "Dina", surname: "Asher-Smith", isFavorite: false, country: "United Kingdom", discipline: [.sprint, .relays], image: "dinaAsher-Smith"),
+                                                                     Athletes(name: "Karsten", surname: "Warholm", isFavorite: false, country: "Norway", discipline: [.hurdles, .relays], image: "karstenWarholm"),
+                                                                     Athletes(name: "Gianmarco", surname: "Tamberi", isFavorite: true, country: "Italy", discipline: [.highJump], image: "gianmarcoTamberi")]),
+        Match(name: "110m Hurdles Men's Semifinal", time: "10:45 AM", athletes: [Athletes(name: "Dina", surname: "Asher-Smith", isFavorite: false, country: "United Kingdom", discipline: [.sprint, .relays], image: "dinaAsher-Smith"),
+                                                                                 Athletes(name: "Karsten", surname: "Warholm", isFavorite: false, country: "Norway", discipline: [.hurdles, .relays], image: "karstenWarholm"),
+                                                                                 Athletes(name: "Gianmarco", surname: "Tamberi", isFavorite: true, country: "Italy", discipline: [.highJump], image: "gianmarcoTamberi")]),
+        Match(name: "Triple Jump Women's Qualification", time: "12:15 PM", athletes: [Athletes(name: "Dina", surname: "Asher-Smith", isFavorite: false, country: "United Kingdom", discipline: [.sprint, .relays], image: "dinaAsher-Smith"),
+                                                                                      Athletes(name: "Karsten", surname: "Warholm", isFavorite: false, country: "Norway", discipline: [.hurdles, .relays], image: "karstenWarholm"),
+                                                                                      Athletes(name: "Gianmarco", surname: "Tamberi", isFavorite: true, country: "Italy", discipline: [.highJump], image: "gianmarcoTamberi")])
+    ]
 }
 
