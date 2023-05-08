@@ -11,9 +11,7 @@ struct CompetitionsView: View {
     
     @EnvironmentObject var viewModel: ViewModel
     
-    @State var selectedDate = "Ven\n 07.05"
-    
-    var days : [String] = ["Ven\n 07.05","Sab\n 08.05","Dom\n 09.05","Lun\n 10.05","Mar\n 11.05","Mer\n 12.05"]
+    @State var selectedDate = "Ven\n 07/05"
     
     
     //TODO:  showing competition filtered by date , dato che ho messo che non è una data facciamo il controllo se le stringhe sono uguali
@@ -22,33 +20,7 @@ struct CompetitionsView: View {
         ZStack {
             
             ScrollView{
-                HStack{
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack{
-                            HStack(spacing: 5) {
-                                ForEach(days, id: \.self){day in
-                                    VStack{
-                                        Text(day)
-                                            .lineLimit(2)
-                                            .multilineTextAlignment(.center)
-                                            .onTapGesture {
-                                                selectedDate = day
-                                            }
-                                        if day == selectedDate {
-                                            Rectangle()
-                                                .frame(height: 2)
-                                                .foregroundColor(Color.hyperAccent)
-                                        }
-                                    }
-                                }
-                            }
-                            .padding(16)
-                            
-                        }
-                    }
-                    .padding(.trailing,80)
-                }
-                
+                DateSelector(selectedDate: $selectedDate)
                 Text("Favorites")
                     .font(.title)
                 
