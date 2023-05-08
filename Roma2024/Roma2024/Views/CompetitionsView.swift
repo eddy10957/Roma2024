@@ -46,7 +46,7 @@ struct CompetitionsView: View {
                     .font(.title)
                 
                 ForEach(viewModel.competitions.filter({viewModel.favoritesDisciplines.contains($0.discipline)}).filter({$0.date == selectedDate
-                }), id: \.self){ competition in
+                }).sorted(by: {$0.discipline.rawValue < $1.discipline.rawValue}), id: \.self){ competition in
                     CompetitionCell(competition: competition)
                         .padding()
                 }
@@ -54,9 +54,7 @@ struct CompetitionsView: View {
                 
                 Text("All")
                     .font(.title)
-                
-                // Si vedono delle stelle perché so strunz
-                
+                                
                 ForEach(viewModel.competitions.filter({!viewModel.favoritesDisciplines.contains($0.discipline)}).filter({$0.date == selectedDate
                 }).sorted(by: {$0.discipline.rawValue < $1.discipline.rawValue}), id: \.self){ competition in
                     CompetitionCell(competition: competition)

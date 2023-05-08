@@ -13,6 +13,14 @@ struct CompetitionCell: View {
     var body: some View {
         HStack{
             Image(systemName: viewModel.favoritesDisciplines.contains(competition.discipline) ? "star.fill" : "star")
+                .onTapGesture {
+                    if viewModel.favoritesDisciplines.contains(competition.discipline) {
+                        guard let index = viewModel.favoritesDisciplines.firstIndex(where: {$0 == competition.discipline}) else {return}
+                        viewModel.favoritesDisciplines.remove(at: index)
+                    } else{
+                        viewModel.favoritesDisciplines.append(competition.discipline)
+                    }
+                }
             
             Text(competition.discipline.rawValue)
             
