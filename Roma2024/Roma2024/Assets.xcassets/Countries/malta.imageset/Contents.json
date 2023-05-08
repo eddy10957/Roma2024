@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "malta@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "malta@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

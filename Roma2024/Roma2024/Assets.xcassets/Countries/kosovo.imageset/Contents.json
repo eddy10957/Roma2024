@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "kosovo@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "kosovo@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

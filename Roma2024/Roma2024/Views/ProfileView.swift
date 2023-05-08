@@ -14,33 +14,35 @@ struct ProfileView: View {
     @State var notificationToggle : Bool = false
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 20) {
+            
             profileHeader
-            HStack {
-                Text("Favorites")
-                    .font(.title)
-                Spacer()
-                Button(action: {
-                    print("more Clicked")
-                }, label: {
-                    Text("more")
-                })
-                .tint(.hyperAccent)
+            
+            VStack(spacing: 0) {
+                HStack {
+                    Text("Favorites")
+                        .font(.title2)
+                    Spacer()
+                    Button(action: {
+                        print("more Clicked")
+                    }, label: {
+                        Text("more")
+                    })
+                    .tint(.hyperAccent)
+                }
+                
+                Divider()
             }
-            .padding(.horizontal)
             
-            Divider()
-            
-            VStack(alignment: .leading) {
                 nations
                 
                 athletes
                 
                 discipline
-            }
+            
             
             Text("Settings")
-                .font(.title)
+                .font(.title2)
             
             Divider()
             
@@ -48,6 +50,7 @@ struct ProfileView: View {
             Spacer()
             
         }
+        .padding()
         .overlay(alignment: .topTrailing) {
             Image(systemName: "chevron.down")
                 .foregroundColor(Color.primaryDetail)
@@ -79,7 +82,7 @@ struct ProfileView: View {
     
     /// Nations ScrollView
     private var nations: some View {
-        return Group {
+        return VStack(alignment: .leading, spacing: 2) {
             Text("Nations")
                 .font(.headline)
             ScrollView(.horizontal) {
@@ -94,7 +97,7 @@ struct ProfileView: View {
     
     /// Athletes ScrollView
     private var athletes: some View {
-        return Group {
+        return VStack(alignment: .leading, spacing: 2) {
             Text("Athletes")
                 .font(.headline)
             ScrollView(.horizontal){
@@ -111,7 +114,7 @@ struct ProfileView: View {
     
     /// Disciplines ScrollView
     private var discipline: some View {
-        return Group {
+        return VStack(alignment: .leading, spacing: 2) {
             Text("Disciplines")
                 .font(.headline)
             ScrollView(.horizontal){
@@ -129,6 +132,7 @@ struct ProfileView: View {
 enum FavoriteType {
     case nation, athlete, discipline
 }
+
 struct FavoritesElement: View {
     var favoriteType: FavoriteType
     var imageName: String

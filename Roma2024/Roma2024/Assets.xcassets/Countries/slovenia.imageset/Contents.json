@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "slovenia@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "slovenia@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
