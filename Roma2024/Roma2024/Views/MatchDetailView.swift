@@ -10,10 +10,16 @@ import SwiftUI
 struct MatchDetailView: View {
     @EnvironmentObject var viewModel: ViewModel
     @State var match : Match
+    @State var competition : Competitions
     var body: some View {
         
         ScrollView {
+            Text(competition.date.suffix(5) + " \(match.time)")
             Text(match.name)
+            Image(competition.discipline.rawValue.lowercased())
+                .resizable()
+                .scaledToFit()
+                .frame(width: 150)
         }
     }
 }

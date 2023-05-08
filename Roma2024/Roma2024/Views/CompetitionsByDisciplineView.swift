@@ -29,7 +29,7 @@ struct CompetitionsByDisciplineView: View {
             if competition.matches.isEmpty == false {
                 ForEach(competition.matches, id: \.self) { match in
                     NavigationLink {
-                        MatchDetailView(match: match)
+                        MatchDetailView(match: match, competition: competition)
                     } label: {
                         HStack {
                             Image(competition.discipline.rawValue.lowercased())
