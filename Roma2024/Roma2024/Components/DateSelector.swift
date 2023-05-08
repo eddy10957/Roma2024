@@ -21,7 +21,8 @@ struct DateSelector: View {
                             Text(day)
                                 .lineLimit(2)
                                 .multilineTextAlignment(.center)
-                                .font(.callout)
+                                .font(.footnote)
+                                .padding(.horizontal, 5)
                                 .foregroundColor(selectedDate == day ? Color.hyperAccent : Color.black)
                                 .onTapGesture {
                                     selectedDate = day
@@ -36,6 +37,7 @@ struct DateSelector: View {
                 }
                 .padding(16)
         }
+        .padding(.trailing, 60)
     }
 }
 
