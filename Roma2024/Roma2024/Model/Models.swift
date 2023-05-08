@@ -97,9 +97,11 @@ struct Competitions : Hashable{
     var date : String
     
     // non andrebbe fatto cosi ma una nuova struttura con data etc ma che senso ha andarsi a perdere cosi, quindi mockup addios
-    var matches : [String]
+    var matches : [Match]
 }
 
-
-
-
+struct Match : Hashable {
+    var name : String
+    var time : String
+    var athletes : [Athletes]
+}

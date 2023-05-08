@@ -26,6 +26,8 @@
 		AAE900562A04FDA2000FAB23 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE900552A04FDA2000FAB23 /* TabBarView.swift */; };
 		AAE900582A04FDA3000FAB23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE900572A04FDA3000FAB23 /* Assets.xcassets */; };
 		AAE9005B2A04FDA3000FAB23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE9005A2A04FDA3000FAB23 /* Preview Assets.xcassets */; };
+		ACE5A6CC2A09171500B94A63 /* DateSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5A6CB2A09171500B94A63 /* DateSelector.swift */; };
+		ACE5A6CE2A0926D000B94A63 /* CompetitionsByDisciplineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5A6CD2A0926D000B94A63 /* CompetitionsByDisciplineView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		AAE900552A04FDA2000FAB23 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		AAE900572A04FDA3000FAB23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAE9005A2A04FDA3000FAB23 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ACE5A6CB2A09171500B94A63 /* DateSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSelector.swift; sourceTree = "<group>"; };
+		ACE5A6CD2A0926D000B94A63 /* CompetitionsByDisciplineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsByDisciplineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 		43ABC9922A06EAD7000F2335 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				ACE5A6CB2A09171500B94A63 /* DateSelector.swift */,
 				43ABC9932A06EAF0000F2335 /* CategorySelector.swift */,
 				AADA83242A081B2F001E9081 /* CompetitionCell.swift */,
 				AAC00ED52A07EAB10094CE85 /* FloatingMenu.swift */,
@@ -81,6 +86,7 @@
 				AAE900552A04FDA2000FAB23 /* TabBarView.swift */,
 				43DD35022A066B2600BC00CB /* DiscoverView.swift */,
 				43DD35042A066B2F00BC00CB /* CompetitionsView.swift */,
+				ACE5A6CD2A0926D000B94A63 /* CompetitionsByDisciplineView.swift */,
 				43DD35062A066B3500BC00CB /* MapView.swift */,
 				43DD35082A066B3D00BC00CB /* ProfileView.swift */,
 				43DD350A2A066B4300BC00CB /* TicketsView.swift */,
@@ -222,10 +228,12 @@
 				43DD35102A06D51900BC00CB /* Styling.swift in Sources */,
 				AAC00ED82A07F1FC0094CE85 /* NewsCardBig.swift in Sources */,
 				AAC00ED42A07CF890094CE85 /* SplashView.swift in Sources */,
+				ACE5A6CC2A09171500B94A63 /* DateSelector.swift in Sources */,
 				43DD35072A066B3500BC00CB /* MapView.swift in Sources */,
 				AAC00ED62A07EAB10094CE85 /* FloatingMenu.swift in Sources */,
 				43DD35052A066B2F00BC00CB /* CompetitionsView.swift in Sources */,
 				43DD350B2A066B4300BC00CB /* TicketsView.swift in Sources */,
+				ACE5A6CE2A0926D000B94A63 /* CompetitionsByDisciplineView.swift in Sources */,
 				AADA83292A08D5F4001E9081 /* OpenNewsView.swift in Sources */,
 				43DD35092A066B3D00BC00CB /* ProfileView.swift in Sources */,
 				43DD35032A066B2600BC00CB /* DiscoverView.swift in Sources */,

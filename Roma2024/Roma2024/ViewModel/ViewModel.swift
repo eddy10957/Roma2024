@@ -59,7 +59,7 @@ class ViewModel : ObservableObject {
     @Published var profile = Profile(name: "John", surname: "Doe", image: "gianmarcoTamberi")
     
     @Published var competitions : [Competitions] = [
-        Competitions(discipline: .highJump, isFavorite: false, date: "Ven\n 07/05",matches: []),
+        Competitions(discipline: .highJump, isFavorite: false, date: "Ven\n 07/05",matches: [Match(name: "Salto in lungo lunghissimo", time: "16:00", athletes: [])]),
         Competitions(discipline: .discThrows, isFavorite: false, date: "Ven\n 07/05",matches: []),
         Competitions(discipline: .hurdles, isFavorite: false, date: "Ven\n 07/05",matches: []),
         Competitions(discipline: .javelinThrow, isFavorite: false, date: "Ven\n 07/05",matches: []),

@@ -17,35 +17,46 @@ struct CompetitionsView: View {
     //TODO:  showing competition filtered by date , dato che ho messo che non è una data facciamo il controllo se le stringhe sono uguali
     
     var body: some View {
-        ZStack {
-            
-            ScrollView{
-                DateSelector(selectedDate: $selectedDate)
-                Text("Favorites")
-                    .font(.title)
+        NavigationView {
+            ZStack {
                 
-                ForEach(viewModel.competitions.filter({viewModel.favoritesDisciplines.contains($0.discipline)}).filter({$0.date == selectedDate
-                }).sorted(by: {$0.discipline.rawValue < $1.discipline.rawValue}), id: \.self){ competition in
-                    CompetitionCell(competition: competition)
+                ScrollView{
+                    DateSelector(selectedDate: $selectedDate)
+                    Text("Favorites")
+                        .font(.title)
+                    
+                    ForEach(viewModel.competitions.filter({viewModel.favoritesDisciplines.contains($0.discipline)}).filter({$0.date == selectedDate
+                    }).sorted(by: {$0.discipline.rawValue < $1.discipline.rawValue}), id: \.self){ competition in
+                        NavigationLink {
+                            CompetitionsByDisciplineView(competition: competition)
+                        } label: {
+                            CompetitionCell(competition: competition)
+                        }
                         .padding()
-                }
-                
-                
-                Text("All")
-                    .font(.title)
+                    }
+                    
+                    
+                    Text("All")
+                        .font(.title)
+                    
+                    ForEach(viewModel.competitions.filter({!viewModel.favoritesDisciplines.contains($0.discipline)}).filter({$0.date == selectedDate
+                    }).sorted(by: {$0.discipline.rawValue < $1.discipline.rawValue}), id: \.self){ competition in
+                        NavigationLink {
+                            CompetitionsByDisciplineView(competition: competition)
+                        } label: {
+                            CompetitionCell(competition: competition)
                                 
-                ForEach(viewModel.competitions.filter({!viewModel.favoritesDisciplines.contains($0.discipline)}).filter({$0.date == selectedDate
-                }).sorted(by: {$0.discipline.rawValue < $1.discipline.rawValue}), id: \.self){ competition in
-                    CompetitionCell(competition: competition)
+                        }
                         .padding()
+                    }
                 }
             }
         }
     }
 }
 
-struct CompetitionsView_Previews: PreviewProvider {
-    static var previews: some View {
-        CompetitionsView()
-    }
-}
+//struct CompetitionsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CompetitionsView()
+//    }
+//}

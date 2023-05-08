@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct TicketsView: View {
+    @Environment(\.presentationMode) var presentation
+    @EnvironmentObject var viewModel : ViewModel
+    
     var body: some View {
-        Text("TicketView")
+        NavigationView {
+            VStack {
+                Text("TicketView")
+            }
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarTrailing){
+                    Image(systemName: "chevron.down")
+                        .foregroundColor(Color.primaryDetail)
+                        .onTapGesture {
+                            presentation.wrappedValue.dismiss()
+                        }
+                }
+            })
+        }
     }
 }
 
