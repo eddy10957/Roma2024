@@ -8,13 +8,40 @@
 import SwiftUI
 
 struct CategorySelector: View {
+    @Binding var selectedCategory: NewsCategory
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack{
+                    HStack( spacing: 5) {
+                        ForEach(NewsCategory.allCases, id: \.self) { category in
+                            VStack(alignment: .leading){
+                                Text(category.rawValue)
+                                    .font(.headline)
+                                    .padding()
+                                    .onTapGesture {
+                                        selectedCategory = category
+                                    }
+                                
+                                if category == selectedCategory {
+                                    Rectangle()
+                                        .frame(height: 2)
+                                        .foregroundColor(Color.hyperAccent)
+                                }
+                            }
+                        }
+                    }
+                    .padding(16)
+                    
+                }
+            }
+            .padding(.trailing,80)
+        }
     }
 }
 
-struct CategorySelector_Previews: PreviewProvider {
-    static var previews: some View {
-        CategorySelector()
-    }
-}
+//struct CategorySelector_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CategorySelector()
+//    }
+//}

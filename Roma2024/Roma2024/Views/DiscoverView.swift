@@ -27,33 +27,7 @@ struct DiscoverView: View {
         NavigationView{
             ZStack{
                 VStack(alignment: .leading){
-                    HStack{
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack{
-                                HStack( spacing: 5) {
-                                    ForEach(NewsCategory.allCases, id: \.self) { category in
-                                        VStack(alignment: .leading){
-                                            Text(category.rawValue)
-                                                .font(.headline)
-                                                .padding()
-                                                .onTapGesture {
-                                                    selectedCategory = category
-                                                }
-                                            
-                                            if category == selectedCategory {
-                                                Rectangle()
-                                                    .frame(height: 2)
-                                                    .foregroundColor(Color.hyperAccent)
-                                            }
-                                        }
-                                    }
-                                }
-                                .padding(16)
-                                
-                            }
-                        }
-                        .padding(.trailing,80)
-                    }
+                    CategorySelector(selectedCategory: $selectedCategory)
                     
                     Text("For You")
                         .padding()
