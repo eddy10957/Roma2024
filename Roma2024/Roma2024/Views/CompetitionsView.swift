@@ -27,12 +27,19 @@ struct CompetitionsView: View {
                         HStack{
                             HStack(spacing: 5) {
                                 ForEach(days, id: \.self){day in
-                                    Text(day)
-                                        .lineLimit(2)
-                                        .multilineTextAlignment(.center)
-                                        .onTapGesture {
-                                            selectedDate = day
+                                    VStack{
+                                        Text(day)
+                                            .lineLimit(2)
+                                            .multilineTextAlignment(.center)
+                                            .onTapGesture {
+                                                selectedDate = day
+                                            }
+                                        if day == selectedDate {
+                                            Rectangle()
+                                                .frame(height: 2)
+                                                .foregroundColor(Color.hyperAccent)
                                         }
+                                    }
                                 }
                             }
                             .padding(16)
