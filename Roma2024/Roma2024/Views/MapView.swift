@@ -10,13 +10,47 @@ import SwiftUI
 struct MapView: View {
     var body: some View {
         ZStack {
-            Image("Bg")
+            
+            Image("map")
                 .resizable()
-                .scaledToFill()
-                .ignoresSafeArea()
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                .font(.largeTitle)
-                .foregroundColor(.primaryHeadline)
+                
+            HStack{
+                ZStack(alignment: .center){
+                    
+                    
+                    Circle()
+                        .fill()
+                        .frame(width: 50,height: 50)
+                        .foregroundColor(.primaryBackground)
+                    
+                    Image("path")
+                        .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 40,height: 40)
+                        .foregroundColor(.white)
+                        
+                }
+                
+                
+                Spacer()
+                
+                ZStack(alignment: .top){
+                    
+                    
+                    Circle()
+                        .fill()
+                        .frame(width: 50,height: 50)
+                        .foregroundColor(.primaryBackground)
+                    
+                    Image("colosseum")
+                        .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 40,height: 40)
+                        .foregroundColor(.white)
+                    
+                }
+                    
+            }
         }
     }
 }
