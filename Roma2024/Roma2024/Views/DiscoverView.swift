@@ -26,6 +26,7 @@ struct DiscoverView: View {
     var body: some View {
         NavigationView{
             ZStack{
+                ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 3){
                     CategorySelector(selectedCategory: $selectedCategory)
                     
@@ -52,7 +53,6 @@ struct DiscoverView: View {
                         .bold()
                         .padding(.horizontal)
                     
-                    ScrollView(.vertical, showsIndicators: false) {
                         VStack{
                             VStack(alignment:.leading, spacing: 5) {
                                 ForEach(filteredNews, id:\.self){ news in
