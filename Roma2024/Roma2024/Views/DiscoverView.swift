@@ -13,10 +13,10 @@ struct DiscoverView: View {
     
     @State var showProfile : Bool = false
     @State var showTicket : Bool = false
-    @State var selectedCategory : NewsCategory = .none
+    @State var selectedCategory : NewsCategory = .all
     
     var filteredNews: [News] {
-        if selectedCategory == .none {
+        if selectedCategory == .all {
             return viewModel.news
         }else{
             return viewModel.news.filter({$0.discipline == selectedCategory})
