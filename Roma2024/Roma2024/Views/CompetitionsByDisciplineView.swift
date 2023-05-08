@@ -11,8 +11,7 @@ struct CompetitionsByDisciplineView: View {
     
     @EnvironmentObject var viewModel: ViewModel
     @State var competition : Competitions
-    
-    
+
     var body: some View {
         ScrollView(showsIndicators: false) {
             HStack {
@@ -26,16 +25,21 @@ struct CompetitionsByDisciplineView: View {
                 Spacer()
             }
             .padding(.horizontal)
+            
             if competition.matches.isEmpty == false {
                 ForEach(competition.matches, id: \.self) { match in
-                    HStack {
-                        Image(competition.discipline.rawValue.lowercased())
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50)
-                        Text(match.name)
-                        Spacer()
-                        Text("16:00")
+                    NavigationLink {
+                        MatchDetailView(match: match)
+                    } label: {
+                        HStack {
+                            Image(competition.discipline.rawValue.lowercased())
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 50)
+                            Text(match.name)
+                            Spacer()
+                            Text(match.time)
+                        }
                     }
                     .padding(.horizontal)
                 }

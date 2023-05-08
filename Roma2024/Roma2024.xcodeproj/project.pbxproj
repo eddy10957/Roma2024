@@ -28,6 +28,7 @@
 		AAE9005B2A04FDA3000FAB23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE9005A2A04FDA3000FAB23 /* Preview Assets.xcassets */; };
 		ACE5A6CC2A09171500B94A63 /* DateSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5A6CB2A09171500B94A63 /* DateSelector.swift */; };
 		ACE5A6CE2A0926D000B94A63 /* CompetitionsByDisciplineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5A6CD2A0926D000B94A63 /* CompetitionsByDisciplineView.swift */; };
+		ACE5A6D02A09320800B94A63 /* MatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5A6CF2A09320800B94A63 /* MatchDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		AAE9005A2A04FDA3000FAB23 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ACE5A6CB2A09171500B94A63 /* DateSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSelector.swift; sourceTree = "<group>"; };
 		ACE5A6CD2A0926D000B94A63 /* CompetitionsByDisciplineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsByDisciplineView.swift; sourceTree = "<group>"; };
+		ACE5A6CF2A09320800B94A63 /* MatchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				43DD35022A066B2600BC00CB /* DiscoverView.swift */,
 				43DD35042A066B2F00BC00CB /* CompetitionsView.swift */,
 				ACE5A6CD2A0926D000B94A63 /* CompetitionsByDisciplineView.swift */,
+				ACE5A6CF2A09320800B94A63 /* MatchDetailView.swift */,
 				43DD35062A066B3500BC00CB /* MapView.swift */,
 				43DD35082A066B3D00BC00CB /* ProfileView.swift */,
 				43DD350A2A066B4300BC00CB /* TicketsView.swift */,
@@ -227,6 +230,7 @@
 				AAC00ED22A07C14E0094CE85 /* ViewModel.swift in Sources */,
 				43DD35102A06D51900BC00CB /* Styling.swift in Sources */,
 				AAC00ED82A07F1FC0094CE85 /* NewsCardBig.swift in Sources */,
+				ACE5A6D02A09320800B94A63 /* MatchDetailView.swift in Sources */,
 				AAC00ED42A07CF890094CE85 /* SplashView.swift in Sources */,
 				ACE5A6CC2A09171500B94A63 /* DateSelector.swift in Sources */,
 				43DD35072A066B3500BC00CB /* MapView.swift in Sources */,
