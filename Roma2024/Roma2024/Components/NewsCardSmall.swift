@@ -16,6 +16,7 @@ struct NewsCardSmall: View {
                 .scaledToFill()
                 .frame(width: 100, height: 100)
                 .clipped()
+                .cornerRadius(15)
             
             VStack(alignment: .leading){
                 Text(news.title)
@@ -24,6 +25,7 @@ struct NewsCardSmall: View {
                 Text(news.subtitle!)
                     .font(.subheadline)
                     .multilineTextAlignment(.leading)
+                    .foregroundColor(.secondary)
 
             }
         }
