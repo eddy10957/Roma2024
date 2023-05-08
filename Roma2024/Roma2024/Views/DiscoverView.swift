@@ -26,18 +26,26 @@ struct DiscoverView: View {
     var body: some View {
         
         ZStack{
-            VStack{
+            VStack(alignment: .leading){
                 HStack{
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack{
                             HStack(spacing: 5) {
                                 ForEach(NewsCategory.allCases, id: \.self) { category in
-                                    Text(category.rawValue)
-                                        .font(.headline)
-                                        .padding()
-                                        .onTapGesture {
-                                            selectedCategory = category
+                                    VStack(alignment: .leading){
+                                        Text(category.rawValue)
+                                            .font(.headline)
+                                            .padding()
+                                            .onTapGesture {
+                                                selectedCategory = category
+                                            }
+                                        
+                                        if category == selectedCategory {
+                                            Rectangle()
+                                                .frame(height: 2)
+                                                .foregroundColor(Color.hyperAccent)
                                         }
+                                    }
                                 }
                             }
                             .padding(16)
@@ -48,10 +56,11 @@ struct DiscoverView: View {
                 }
                 
                 Text("For You")
+                    .padding()
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack{
-                        HStack(spacing: 5) {
+                        HStack( alignment:.top ,spacing: 5) {
                             ForEach(viewModel.news, id:\.self){ news in
                                 NewsCardBig(news: news)
                             }
@@ -62,6 +71,7 @@ struct DiscoverView: View {
                 }
                 
                 Text("More")
+                    .padding()
                 
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack{
@@ -74,9 +84,9 @@ struct DiscoverView: View {
                         
                     }
                 }
-
                 
-               
+                
+                
                 Spacer()
             }
             
