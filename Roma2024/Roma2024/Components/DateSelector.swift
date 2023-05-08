@@ -35,7 +35,7 @@ struct DateSelector: View {
                         }
                     }
                 }
-                .padding(16)
+                .padding(.bottom, 10)
         }
         .padding(.trailing, 60)
     }

@@ -18,12 +18,15 @@ struct CompetitionsView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
+            
+            ScrollView {
                 
-                ScrollView{
+                VStack (alignment: .leading) {
+                    
                     DateSelector(selectedDate: $selectedDate)
+                    
                     Text("Favorites")
-                        .font(.title)
+                        .font(.headline)
                     
                     ForEach(viewModel.competitions.filter({viewModel.favoritesDisciplines.contains($0.discipline)}).filter({$0.date == selectedDate
                     }).sorted(by: {$0.discipline.rawValue < $1.discipline.rawValue}), id: \.self){ competition in
@@ -32,12 +35,12 @@ struct CompetitionsView: View {
                         } label: {
                             CompetitionCell(competition: competition)
                         }
-                        .padding()
+                        .padding(.vertical, 5)
                     }
                     
                     
                     Text("All")
-                        .font(.title)
+                        .font(.headline)
                     
                     ForEach(viewModel.competitions.filter({!viewModel.favoritesDisciplines.contains($0.discipline)}).filter({$0.date == selectedDate
                     }).sorted(by: {$0.discipline.rawValue < $1.discipline.rawValue}), id: \.self){ competition in
@@ -45,12 +48,14 @@ struct CompetitionsView: View {
                             CompetitionsByDisciplineView(competition: competition)
                         } label: {
                             CompetitionCell(competition: competition)
-                                
+                            
                         }
-                        .padding()
+                        .padding(.vertical, 5)
                     }
                 }
             }
+            .padding()
+            .tint(Color.primaryBackground)
         }
     }
 }

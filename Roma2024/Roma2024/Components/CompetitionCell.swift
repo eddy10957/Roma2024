@@ -12,7 +12,17 @@ struct CompetitionCell: View {
     @State var competition : Competitions
     var body: some View {
         HStack{
-            Image(systemName: viewModel.favoritesDisciplines.contains(competition.discipline) ? "star.fill" : "star")
+            ZStack {
+                Circle()
+                    .foregroundColor(viewModel.favoritesDisciplines.contains(competition.discipline) ? .yellow : .primaryBackground)
+                Image(competition.discipline.rawValue.lowercased())
+                    .renderingMode(.template)
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .scaledToFit()
+                    .foregroundColor(.body)
+            }
+            .frame(width: 35, height: 35)
                 .onTapGesture {
                     if viewModel.favoritesDisciplines.contains(competition.discipline) {
                         guard let index = viewModel.favoritesDisciplines.firstIndex(where: {$0 == competition.discipline}) else {return}
