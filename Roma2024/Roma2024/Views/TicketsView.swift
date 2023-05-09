@@ -94,10 +94,10 @@ struct TicketsView: View {
             // MARK: Add Button
             Button(action: {
             }, label: {
-                Image(systemName: "plus.circle.fill")
-                    .font(.largeTitle)
-                    .foregroundColor(Color.primaryBackground)
+                    Text("Buy Ticket")
+                        .foregroundColor(Color.white)
             })
+            .buttonStyle(.borderedProminent)
             .rotationEffect(.init(degrees: expandCards ? 180 : 0))
             // To avoid warning 0.01
             .scaleEffect(expandCards ? 0.01 : 1)
@@ -244,7 +244,7 @@ struct DetailView: View {
                 .foregroundColor(Color.secondaryBackground)
             VStack(alignment: .leading) {
                 HStack {
-                    Image("europeanAthletics")
+                    Image(currentCard.logo)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 30)
@@ -309,7 +309,7 @@ struct DetailView: View {
 // MARK: Card Model & SampleData
 
 struct Card: Identifiable, Hashable {
-    var logo: String = "europeanAthletics.small"
+    var logo: String = "europeanAthletics"
     var id = UUID().uuidString
     var name: String
     var date: String

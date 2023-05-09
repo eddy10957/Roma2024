@@ -135,7 +135,7 @@ struct RedeemsView: View {
             
             
             ZStack(alignment: .bottomLeading) {
-                // Image/Front of the Card in the Wallet list
+
                 Rectangle()
                     .foregroundColor(Color.secondaryBackground)
                 VStack(alignment: .leading) {
@@ -148,13 +148,11 @@ struct RedeemsView: View {
                             Text(card.name)
                                 .font(.headline)
                                 .bold()
-                            Text(card.date)
-                                .fontWeight(.medium)
                         }
                     }
                     .padding([.top, .horizontal])
                     Spacer()
-                    Text("Olympic Stadium")
+                    Text("\(card.points) points")
                         .font(.headline)
                         .fontWeight(.medium)
                         .padding([.bottom, .horizontal])
@@ -182,12 +180,32 @@ struct RedeemsView: View {
 // MARK: Redeem Detail View
 struct RedeemDetailView: View {
     
+//    @Binding var yourPoints : Int
+    @State private var isRedeemed = false
     var currentCard: RedeemCard
     @Binding var showDetailCard: Bool
     // Matched Geometry Effect
     var animation: Namespace.ID
     
     @ObservedObject var viewRouter: ViewRouter = ViewRouter.shared
+    
+    func randomAlphanumericString() -> String {
+       let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+       let len = UInt32(letters.count)
+       var random = SystemRandomNumberGenerator()
+       var randomString = ""
+        for counter in 0..<3 {
+            for _ in 0..<5 {
+                let randomIndex = Int(random.next(upperBound: len))
+                let randomCharacter = letters[letters.index(letters.startIndex, offsetBy: randomIndex)]
+                randomString.append(randomCharacter)
+            }
+            if counter != 2 {
+                randomString.append("-")
+            }
+        }
+       return randomString
+    }
     
     var body: some View {
         
@@ -203,7 +221,7 @@ struct RedeemDetailView: View {
                     HStack {
                         VStack(alignment: .leading) {
                             
-                            Text(currentCard.user)
+                            Text("\(currentCard.points) points")
                                 .fontWeight(.bold)
                                 .font(.headline)
                             Text(currentCard.name)
@@ -213,13 +231,29 @@ struct RedeemDetailView: View {
                         Spacer()
                     }
                     
-                    VStack(spacing: 20) {
-                        
-                        // QR Code
-                        Image(currentCard.image)
-                            .resizable()
-                            .scaledToFit()
+                    
+                    VStack {
+                        Spacer()
+                        Text(randomAlphanumericString())
+                            .fontWeight(.bold)
+                            .font(.largeTitle)
+                            .opacity(isRedeemed ? 1 : 0)
+
+                        Spacer()
+                        Button {
+                            isRedeemed = true
+                        } label: {
+                            if isRedeemed {
+                                Text("Redeemed")
+                            } else {
+                                Text("Redeem")
+                            }
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .foregroundColor(.white)
                     }
+                    
+                    
                 }
                 .padding()
                 
@@ -233,7 +267,7 @@ struct RedeemDetailView: View {
     @ViewBuilder
     func RedeemCardView() -> some View {
         ZStack(alignment: .bottomLeading) {
-            // Image/Front of the Card in the Wallet list
+
             Rectangle()
                 .foregroundColor(Color.secondaryBackground)
             VStack(alignment: .leading) {
@@ -246,13 +280,11 @@ struct RedeemDetailView: View {
                         Text(currentCard.name)
                             .font(.headline)
                             .bold()
-                        Text(currentCard.date)
-                            .fontWeight(.medium)
                     }
                 }
                 .padding([.top, .horizontal])
                 Spacer()
-                Text("Olympic Stadium")
+                Text("\(currentCard.points) points")
                     .font(.headline)
                     .fontWeight(.medium)
                     .padding([.bottom, .horizontal])
@@ -275,12 +307,7 @@ struct RedeemDetailView: View {
                     }
                 })
             }, label: {
-//                Image(systemName: "xmark")
-//                    .resizable()
-//                    .foregroundColor(.hyperAccent)
-//                    .frame(width: 20, height: 20)
-//                    .padding(.trailing)
-//                    .padding(.top, 30)
+
                 
                 ZStack {
                     Image(systemName: "circle.fill")
@@ -303,21 +330,18 @@ struct RedeemDetailView: View {
 // MARK: Card Model & SampleData
 
 struct RedeemCard: Identifiable, Hashable {
-    var logo: String = "europeanAthletics.small"
+    var logo: String = "europeanAthletics"
     var id = UUID().uuidString
     var name: String
-    var date: String
     var image: String
-    var user: String
+    var points: Int
 }
 
 var redeemCards: [RedeemCard] = [
-    RedeemCard(name: "100m Men's Final", date: "07/06", image: "qrcode", user: "Raffaele Sicimmanu"),
-    RedeemCard(name: "High Jump Men's Qualification", date: "08/06", image: "qrcode", user: "Raffaele Sicimmanu"),
-    RedeemCard(name: "Triple Jump Women's Qualification", date: "09/06", image: "qrcode", user: "Raffaele Sicimmanu"),
-    RedeemCard(name: "800m Men's Final", date: "10/06", image: "qrcode", user: "Raffaele Sicimmanu"),
-    RedeemCard(name: "200m Women's Semifinal", date: "11/06", image: "qrcode", user: "Raffaele Sicimmanu"),
-    RedeemCard(name: "Shot Put Men's Final", date: "12/06", image: "qrcode", user: "Raffaele Sicimmanu")
+  RedeemCard(name: "Vatican Museum", image: "", points: 2900),
+  RedeemCard(name: "eBike Sharing Coupon 5€", image: "", points: 500),
+  RedeemCard(name: "Amazoun Voucher 5€", image: "", points: 500),
+  RedeemCard(name: "Musei Capitolini", image: "", points: 1700)
 ]
 
 
