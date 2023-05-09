@@ -40,7 +40,13 @@ struct LocationDetails: View {
                     print("dio cane")
                     tappedLocation = false
                 }, label: {
-                    Text("Dio cane")
+                    HStack{
+                        Text("Earn 50")
+                        Image("goldMedal")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                        
+                    }
 
                 })
                 .buttonStyle(.borderedProminent)
