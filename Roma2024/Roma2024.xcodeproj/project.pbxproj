@@ -14,7 +14,11 @@
 		43DD35092A066B3D00BC00CB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DD35082A066B3D00BC00CB /* ProfileView.swift */; };
 		43DD350B2A066B4300BC00CB /* TicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DD350A2A066B4300BC00CB /* TicketsView.swift */; };
 		43DD35102A06D51900BC00CB /* Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DD350F2A06D51900BC00CB /* Styling.swift */; };
+		AA68754C2A0A9AF60031E4F9 /* LocationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA68754B2A0A9AF60031E4F9 /* LocationDetails.swift */; };
 		AAA4A5222A0A506A0043CAD0 /* MoreFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA4A5212A0A506A0043CAD0 /* MoreFavoritesView.swift */; };
+		AAA4A5252A0A7B010043CAD0 /* Map in Frameworks */ = {isa = PBXBuildFile; productRef = AAA4A5242A0A7B010043CAD0 /* Map */; };
+		AAA4A5272A0A7C680043CAD0 /* Poi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA4A5262A0A7C680043CAD0 /* Poi.swift */; };
+		AAA4A5292A0A7FAC0043CAD0 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA4A5282A0A7FAC0043CAD0 /* PopUpView.swift */; };
 		AAC00ECF2A07BC850094CE85 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC00ECE2A07BC850094CE85 /* Models.swift */; };
 		AAC00ED22A07C14E0094CE85 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC00ED12A07C14E0094CE85 /* ViewModel.swift */; };
 		AAC00ED42A07CF890094CE85 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC00ED32A07CF890094CE85 /* SplashView.swift */; };
@@ -27,8 +31,6 @@
 		AAE900562A04FDA2000FAB23 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE900552A04FDA2000FAB23 /* TabBarView.swift */; };
 		AAE900582A04FDA3000FAB23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE900572A04FDA3000FAB23 /* Assets.xcassets */; };
 		AAE9005B2A04FDA3000FAB23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE9005A2A04FDA3000FAB23 /* Preview Assets.xcassets */; };
-		ACDC98BD2A0A7BF00048AEB7 /* SegmentedControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC98BC2A0A7BF00048AEB7 /* SegmentedControllerView.swift */; };
-		ACDC98BF2A0AA0E90048AEB7 /* RedeemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC98BE2A0AA0E90048AEB7 /* RedeemsView.swift */; };
 		ACE5A6CC2A09171500B94A63 /* DateSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5A6CB2A09171500B94A63 /* DateSelector.swift */; };
 		ACE5A6D02A09320800B94A63 /* MatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5A6CF2A09320800B94A63 /* MatchDetailView.swift */; };
 /* End PBXBuildFile section */
@@ -41,7 +43,10 @@
 		43DD35082A066B3D00BC00CB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		43DD350A2A066B4300BC00CB /* TicketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsView.swift; sourceTree = "<group>"; };
 		43DD350F2A06D51900BC00CB /* Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styling.swift; sourceTree = "<group>"; };
+		AA68754B2A0A9AF60031E4F9 /* LocationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetails.swift; sourceTree = "<group>"; };
 		AAA4A5212A0A506A0043CAD0 /* MoreFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreFavoritesView.swift; sourceTree = "<group>"; };
+		AAA4A5262A0A7C680043CAD0 /* Poi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poi.swift; sourceTree = "<group>"; };
+		AAA4A5282A0A7FAC0043CAD0 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		AAC00ECE2A07BC850094CE85 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		AAC00ED12A07C14E0094CE85 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		AAC00ED32A07CF890094CE85 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -55,8 +60,6 @@
 		AAE900552A04FDA2000FAB23 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		AAE900572A04FDA3000FAB23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAE9005A2A04FDA3000FAB23 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		ACDC98BC2A0A7BF00048AEB7 /* SegmentedControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControllerView.swift; sourceTree = "<group>"; };
-		ACDC98BE2A0AA0E90048AEB7 /* RedeemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemsView.swift; sourceTree = "<group>"; };
 		ACE5A6CB2A09171500B94A63 /* DateSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSelector.swift; sourceTree = "<group>"; };
 		ACE5A6CF2A09320800B94A63 /* MatchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAA4A5252A0A7B010043CAD0 /* Map in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,9 +79,9 @@
 		43ABC9922A06EAD7000F2335 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				ACDC98BC2A0A7BF00048AEB7 /* SegmentedControllerView.swift */,
 				ACE5A6CB2A09171500B94A63 /* DateSelector.swift */,
 				43ABC9932A06EAF0000F2335 /* CategorySelector.swift */,
+				AAA4A5282A0A7FAC0043CAD0 /* PopUpView.swift */,
 				AADA83242A081B2F001E9081 /* CompetitionCell.swift */,
 				AAC00ED52A07EAB10094CE85 /* FloatingMenu.swift */,
 				AAC00ED72A07F1FC0094CE85 /* NewsCardBig.swift */,
@@ -90,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				AAC00ED32A07CF890094CE85 /* SplashView.swift */,
+				AA68754B2A0A9AF60031E4F9 /* LocationDetails.swift */,
 				AAE900552A04FDA2000FAB23 /* TabBarView.swift */,
 				43DD35022A066B2600BC00CB /* DiscoverView.swift */,
 				43DD35042A066B2F00BC00CB /* CompetitionsView.swift */,
@@ -99,7 +104,6 @@
 				AAA4A5212A0A506A0043CAD0 /* MoreFavoritesView.swift */,
 				43DD350A2A066B4300BC00CB /* TicketsView.swift */,
 				AADA83282A08D5F4001E9081 /* OpenNewsView.swift */,
-				ACDC98BE2A0AA0E90048AEB7 /* RedeemsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -108,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				AAC00ECE2A07BC850094CE85 /* Models.swift */,
+				AAA4A5262A0A7C680043CAD0 /* Poi.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,6 +180,9 @@
 			dependencies = (
 			);
 			name = Roma2024;
+			packageProductDependencies = (
+				AAA4A5242A0A7B010043CAD0 /* Map */,
+			);
 			productName = Roma2024;
 			productReference = AAE900502A04FDA2000FAB23 /* Roma2024.app */;
 			productType = "com.apple.product-type.application";
@@ -203,6 +211,9 @@
 				Base,
 			);
 			mainGroup = AAE900472A04FDA2000FAB23;
+			packageReferences = (
+				AAA4A5232A0A7B010043CAD0 /* XCRemoteSwiftPackageReference "Map" */,
+			);
 			productRefGroup = AAE900512A04FDA2000FAB23 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,19 +246,20 @@
 				AAE900542A04FDA2000FAB23 /* Roma2024App.swift in Sources */,
 				AAC00ED22A07C14E0094CE85 /* ViewModel.swift in Sources */,
 				43DD35102A06D51900BC00CB /* Styling.swift in Sources */,
+				AAA4A5292A0A7FAC0043CAD0 /* PopUpView.swift in Sources */,
+				AAA4A5272A0A7C680043CAD0 /* Poi.swift in Sources */,
 				AAC00ED82A07F1FC0094CE85 /* NewsCardBig.swift in Sources */,
 				ACE5A6D02A09320800B94A63 /* MatchDetailView.swift in Sources */,
 				AAC00ED42A07CF890094CE85 /* SplashView.swift in Sources */,
 				ACE5A6CC2A09171500B94A63 /* DateSelector.swift in Sources */,
 				43DD35072A066B3500BC00CB /* MapView.swift in Sources */,
+				AA68754C2A0A9AF60031E4F9 /* LocationDetails.swift in Sources */,
 				AAC00ED62A07EAB10094CE85 /* FloatingMenu.swift in Sources */,
 				43DD35052A066B2F00BC00CB /* CompetitionsView.swift in Sources */,
 				43DD350B2A066B4300BC00CB /* TicketsView.swift in Sources */,
 				AADA83292A08D5F4001E9081 /* OpenNewsView.swift in Sources */,
-				ACDC98BD2A0A7BF00048AEB7 /* SegmentedControllerView.swift in Sources */,
 				43DD35092A066B3D00BC00CB /* ProfileView.swift in Sources */,
 				43DD35032A066B2600BC00CB /* DiscoverView.swift in Sources */,
-				ACDC98BF2A0AA0E90048AEB7 /* RedeemsView.swift in Sources */,
 				AADA83272A08CCE1001E9081 /* NewsCardSmall.swift in Sources */,
 				AAC00ECF2A07BC850094CE85 /* Models.swift in Sources */,
 				AAA4A5222A0A506A0043CAD0 /* MoreFavoritesView.swift in Sources */,
@@ -379,7 +391,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Roma2024/Preview Content\"";
-				DEVELOPMENT_TEAM = 96PF9Z4T28;
+				DEVELOPMENT_TEAM = 3DWPN6Q5Q9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -387,6 +399,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,7 +421,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Roma2024/Preview Content\"";
-				DEVELOPMENT_TEAM = 96PF9Z4T28;
+				DEVELOPMENT_TEAM = 3DWPN6Q5Q9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -416,6 +429,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,6 +465,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AAA4A5232A0A7B010043CAD0 /* XCRemoteSwiftPackageReference "Map" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rmnblm/Map";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AAA4A5242A0A7B010043CAD0 /* Map */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAA4A5232A0A7B010043CAD0 /* XCRemoteSwiftPackageReference "Map" */;
+			productName = Map;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AAE900482A04FDA2000FAB23 /* Project object */;
 }
