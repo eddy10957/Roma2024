@@ -14,68 +14,78 @@ struct ProfileView: View {
     @State var notificationToggle : Bool = false
     
     var body: some View {
-        VStack(spacing: 20) {
-            
-            profileHeader
-            
-            VStack(spacing: 0) {
-                HStack {
-                    Text("Favorites")
-                        .font(.title2)
-                    Spacer()
-                    Button(action: {
-                        print("more Clicked")
-                    }, label: {
-                        Text("more")
-                    })
-                    .tint(.hyperAccent)
+        NavigationView{
+            VStack(spacing: 20) {
+                
+                profileHeader
+                
+                VStack(spacing: 0) {
+                    HStack {
+                        Text("Favorites")
+                            .font(.title2)
+                        Spacer()
+                        //                    Button(action: {
+                        //                        print("more Clicked")
+                        //                    }, label: {
+                        //                        Text("more")
+                        //                    })
+                        //                    .tint(.hyperAccent)
+                        
+                        NavigationLink {
+                            MoreFavoritesView()
+                        } label: {
+                            Text("more")
+                                .tint(.hyperAccent)
+                        }
+                        
+                    }
+                    
+                    Divider()
                 }
                 
-                Divider()
-            }
-            
                 nations
                 
                 athletes
                 
                 discipline
-            
-            Spacer()
-                .frame(maxHeight: 40)
-            VStack(alignment: .leading, spacing: 0) {
-                Text("Settings")
-                    .font(.title2)
-                
-                Divider()
-            }
-            
-            VStack(spacing: 20) {
-                Toggle("Notifications", isOn: $notificationToggle)
                 
                 Spacer()
                     .frame(maxHeight: 40)
-                
-                Button(action: {
+                VStack(alignment: .leading, spacing: 0) {
+                    Text("Settings")
+                        .font(.title2)
                     
-                }, label: {
-                    Text("Privacy Policy")
-                        .font(.footnote)
-                        .underline(true)
-                })
-            }
-            
-            
-            Spacer()
-            
-        }
-        .padding()
-        .overlay(alignment: .topTrailing) {
-            Image(systemName: "chevron.down")
-                .foregroundColor(Color.primaryDetail)
-                .onTapGesture {
-                    presentation.wrappedValue.dismiss()
+                    Divider()
                 }
-                .padding()
+                
+                VStack(spacing: 20) {
+                    Toggle("Notifications", isOn: $notificationToggle)
+                    
+                    Spacer()
+                        .frame(maxHeight: 40)
+                    
+                    Button(action: {
+                        
+                    }, label: {
+                        Text("Privacy Policy")
+                            .font(.footnote)
+                            .underline(true)
+                    })
+                }
+                
+                
+                Spacer()
+                
+            }
+            .padding()
+            .overlay(alignment: .topTrailing) {
+                Image(systemName: "chevron.down")
+                    .foregroundColor(Color.primaryDetail)
+                    .onTapGesture {
+                        presentation.wrappedValue.dismiss()
+                    }
+                    .padding()
+            }
         }
     }
     
