@@ -13,6 +13,7 @@ struct FloatingMenu: View {
     @State var angle = 90.0
     @Binding var showProfile: Bool
     @Binding var showTickets: Bool
+    @Binding var showRedeems: Bool
     var body: some View {
         VStack {
             MainButton(action: {
@@ -25,6 +26,9 @@ struct FloatingMenu: View {
                 MenuButton(action: {
                     showTickets = true
                 }, title: "Tickets", image: "ticket.fill", expand: $expand, offset: -40)
+                MenuButton(action: {
+                    showRedeems = true
+                }, title: "Redeems", image: "tray.circle.fill", expand: $expand, offset: -60)
             }
         }
     }

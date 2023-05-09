@@ -10,18 +10,19 @@ import SwiftUI
 struct TabBarView: View {
     @State var showProfile = false
     @State var showTickets = false
+    @State var showRedeems = false
     var body: some View {
         TabView {
             DiscoverView()
                 .overlay(alignment: .topTrailing) {
-                    FloatingMenu(showProfile: $showProfile, showTickets: $showTickets)
+                    FloatingMenu(showProfile: $showProfile, showTickets: $showTickets, showRedeems: $showRedeems)
                 }
                 .tabItem({
                     TabItem(icon: "europeanAthletics.small", title: "Discover")
                 })
             CompetitionsView()
                 .overlay(alignment: .topTrailing) {
-                    FloatingMenu(showProfile: $showProfile, showTickets: $showTickets)
+                    FloatingMenu(showProfile: $showProfile, showTickets: $showTickets, showRedeems: $showRedeems)
                 }
                 .tabItem({
                     TabItem(icon: "sprint.small", title: "Competitions")
@@ -37,6 +38,9 @@ struct TabBarView: View {
         }
         .fullScreenCover(isPresented: $showTickets){
             TicketsView()
+        }
+        .fullScreenCover(isPresented: $showRedeems){
+            RedeemsView()
         }
     }
 }
