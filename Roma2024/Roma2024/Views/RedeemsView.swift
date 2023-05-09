@@ -124,8 +124,11 @@ struct RedeemsView: View {
             
             ZStack(alignment: .bottomLeading) {
 
-                Rectangle()
-                    .foregroundColor(Color.secondaryBackground)
+                    Image(card.image)
+                        .resizable()
+                    Color.black
+                        .opacity(0.35)
+                
                 VStack(alignment: .leading) {
                     HStack {
                         Image("europeanAthletics")
@@ -136,6 +139,7 @@ struct RedeemsView: View {
                             Text(card.name)
                                 .font(.headline)
                                 .bold()
+                                .foregroundColor(.white)
                         }
                     }
                     .padding([.top, .horizontal])
@@ -143,6 +147,7 @@ struct RedeemsView: View {
                     Text("\(card.points) points")
                         .font(.headline)
                         .fontWeight(.medium)
+                        .foregroundColor(.white)
                         .padding([.bottom, .horizontal])
                 }
                 .padding(5)
@@ -200,7 +205,6 @@ struct RedeemDetailView: View {
         
         VStack {
             HStack {
-//                Spacer()
                 Image("goldMedal")
                     .resizable()
                     .scaledToFit()
@@ -208,7 +212,6 @@ struct RedeemDetailView: View {
                 Text(" \(viewModel.yourPoints)")
                     .font(.body)
                     .foregroundColor(.black)
-//                Spacer()
             }
             RedeemCardView()
                 .matchedGeometryEffect(id: currentCard.id, in: animation)
@@ -295,8 +298,10 @@ struct RedeemDetailView: View {
     func RedeemCardView() -> some View {
         ZStack(alignment: .bottomLeading) {
 
-            Rectangle()
-                .foregroundColor(Color.secondaryBackground)
+            Image(currentCard.image)
+                .resizable()
+            Color.black
+                .opacity(0.35)
             VStack(alignment: .leading) {
                 HStack {
                     Image("europeanAthletics")
@@ -307,6 +312,7 @@ struct RedeemDetailView: View {
                         Text(currentCard.name)
                             .font(.headline)
                             .bold()
+                            .foregroundColor(.white)
                     }
                 }
                 .padding([.top, .horizontal])
@@ -314,6 +320,7 @@ struct RedeemDetailView: View {
                 Text("\(currentCard.points) points")
                     .font(.headline)
                     .fontWeight(.medium)
+                    .foregroundColor(.white)
                     .padding([.bottom, .horizontal])
             }
             .padding(5)
