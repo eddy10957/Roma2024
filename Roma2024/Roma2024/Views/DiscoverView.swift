@@ -56,7 +56,8 @@ struct DiscoverView: View {
                         VStack{
                             VStack(alignment:.leading, spacing: 5) {
                                 ForEach(filteredNews, id:\.self){ news in
-                                    NewsCardSmall(news: news)
+                                    NavigationLink(destination: OpenNewsView(news: news), label: {NewsCardSmall(news: news)})
+                                    
                                 }
                             }
                             .padding(16)
