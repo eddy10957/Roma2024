@@ -20,6 +20,7 @@ struct TabBarView: View {
                 .tabItem({
                     TabItem(icon: "europeanAthletics.small", title: "Discover")
                 })
+                .toolbarBackground(.visible, for: .tabBar)
             CompetitionsView()
                 .overlay(alignment: .topTrailing) {
                     FloatingMenu(showProfile: $showProfile, showTickets: $showTickets, showRedeems: $showRedeems)
@@ -27,10 +28,12 @@ struct TabBarView: View {
                 .tabItem({
                     TabItem(icon: "sprint.small", title: "Competitions")
                 })
+                .toolbarBackground(.visible, for: .tabBar)
             MapView()
                 .tabItem({
                     TabItem(icon: "stadium", title: "Village")
                 })
+                .toolbarBackground(.visible, for: .tabBar)
         }
         .tint(.hyperAccent)
         .fullScreenCover(isPresented: $showProfile){

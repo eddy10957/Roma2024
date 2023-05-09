@@ -10,23 +10,27 @@ import SwiftUI
 struct OpenNewsView: View {
     var news : News
     var body: some View {
-        VStack{
-            Image(news.image)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 300,height: 300)
-                .clipped()
-            
-            VStack(alignment: .leading){
-                Text(news.title)
-                    .font(.headline)
-                Text(news.subtitle!)
-                    .font(.subheadline)
-                Text(news.articleText)
-                    .font(.body)
-                    .multilineTextAlignment(.leading)
+        GeometryReader { geo in
+            VStack {
+                Image(news.image)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: geo.size.width, height: geo.size.height/3)
+                
+                VStack(alignment: .leading){
+                    Text(news.title)
+                        .font(.title)
+                        .bold()
+                    Text(news.subtitle!)
+                        .font(.headline)
+                        .foregroundColor(.primaryHeadline)
+                    Text(news.articleText)
+                        .font(.body)
+                        .multilineTextAlignment(.leading)
+                        .padding(.vertical, 5)
+                }
+                .padding()
             }
-            .padding()
         }
         
         
