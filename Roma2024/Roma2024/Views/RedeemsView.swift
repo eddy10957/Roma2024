@@ -365,10 +365,10 @@ struct RedeemCard: Identifiable, Hashable {
 }
 
 var redeemCards: [RedeemCard] = [
-  RedeemCard(name: "Vatican Museum", image: "", points: 2900),
-  RedeemCard(name: "eBike Sharing Coupon 5€", image: "", points: 500),
-  RedeemCard(name: "Amazoun Voucher 5€", image: "", points: 500),
-  RedeemCard(name: "Musei Capitolini", image: "", points: 1700)
+  RedeemCard(name: "Vatican Museum", image: "vaticano", points: 2900),
+  RedeemCard(name: "eBike Sharing Coupon 5€", image: "bike-sharing-roma", points: 500),
+  RedeemCard(name: "Guided Tour at Coloseum", image: "colosseo", points: 2150),
+  RedeemCard(name: "Musei Capitolini", image: "musei-capitolini", points: 1700)
 ]
 
 
