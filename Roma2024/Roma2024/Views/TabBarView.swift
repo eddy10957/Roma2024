@@ -13,10 +13,16 @@ struct TabBarView: View {
     var body: some View {
         TabView {
             DiscoverView()
+                .overlay(alignment: .topTrailing) {
+                    FloatingMenu(showProfile: $showProfile, showTickets: $showTickets)
+                }
                 .tabItem({
                     TabItem(icon: "europeanAthletics.small", title: "Discover")
                 })
             CompetitionsView()
+                .overlay(alignment: .topTrailing) {
+                    FloatingMenu(showProfile: $showProfile, showTickets: $showTickets)
+                }
                 .tabItem({
                     TabItem(icon: "sprint.small", title: "Competitions")
                 })
@@ -26,9 +32,6 @@ struct TabBarView: View {
                 })
         }
         .tint(.hyperAccent)
-        .overlay(alignment: .topTrailing) {
-            FloatingMenu(showProfile: $showProfile, showTickets: $showTickets)
-        }
         .fullScreenCover(isPresented: $showProfile){
             ProfileView()
         }

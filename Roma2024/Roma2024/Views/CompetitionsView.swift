@@ -32,18 +32,12 @@ struct CompetitionsView: View {
                     }).sorted(by: {$0.discipline.rawValue < $1.discipline.rawValue}), id: \.self){ competition in
                         DisclosureGroup(content: {
                             ForEach(viewModel.matches, id: \.self) { match in
-                                MatchCell(name: match.name, time: match.time, destination: CompetitionsByDisciplineView(competition: competition))
+                                MatchCell(name: match.name, time: match.time, destination: MatchDetailView(match: match, competition: competition))
                                     .padding(.vertical, 5)
                             }
                         }, label: {
                             CompetitionCell(competition: competition)
                         })
-//                        NavigationLink {
-//                            CompetitionsByDisciplineView(competition: competition)
-//                        } label: {
-//                            CompetitionCell(competition: competition)
-//                        }
-//                        .padding(.vertical, 5)
                     }
                     
                     
@@ -54,7 +48,7 @@ struct CompetitionsView: View {
                     }).sorted(by: {$0.discipline.rawValue < $1.discipline.rawValue}), id: \.self){ competition in
                         DisclosureGroup(content: {
                             ForEach(viewModel.matches, id: \.self) { match in
-                                MatchCell(name: match.name, time: match.time, destination: CompetitionsByDisciplineView(competition: competition))
+                                MatchCell(name: match.name, time: match.time, destination: MatchDetailView(match: match, competition: competition))
                                     .padding(.vertical, 5)
                             }
                         }, label: {
