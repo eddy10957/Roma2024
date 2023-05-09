@@ -27,7 +27,6 @@
 		AAE900582A04FDA3000FAB23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE900572A04FDA3000FAB23 /* Assets.xcassets */; };
 		AAE9005B2A04FDA3000FAB23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE9005A2A04FDA3000FAB23 /* Preview Assets.xcassets */; };
 		ACE5A6CC2A09171500B94A63 /* DateSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5A6CB2A09171500B94A63 /* DateSelector.swift */; };
-		ACE5A6CE2A0926D000B94A63 /* CompetitionsByDisciplineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5A6CD2A0926D000B94A63 /* CompetitionsByDisciplineView.swift */; };
 		ACE5A6D02A09320800B94A63 /* MatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5A6CF2A09320800B94A63 /* MatchDetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +52,6 @@
 		AAE900572A04FDA3000FAB23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAE9005A2A04FDA3000FAB23 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ACE5A6CB2A09171500B94A63 /* DateSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSelector.swift; sourceTree = "<group>"; };
-		ACE5A6CD2A0926D000B94A63 /* CompetitionsByDisciplineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionsByDisciplineView.swift; sourceTree = "<group>"; };
 		ACE5A6CF2A09320800B94A63 /* MatchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,7 +86,6 @@
 				AAE900552A04FDA2000FAB23 /* TabBarView.swift */,
 				43DD35022A066B2600BC00CB /* DiscoverView.swift */,
 				43DD35042A066B2F00BC00CB /* CompetitionsView.swift */,
-				ACE5A6CD2A0926D000B94A63 /* CompetitionsByDisciplineView.swift */,
 				ACE5A6CF2A09320800B94A63 /* MatchDetailView.swift */,
 				43DD35062A066B3500BC00CB /* MapView.swift */,
 				43DD35082A066B3D00BC00CB /* ProfileView.swift */,
@@ -237,7 +234,6 @@
 				AAC00ED62A07EAB10094CE85 /* FloatingMenu.swift in Sources */,
 				43DD35052A066B2F00BC00CB /* CompetitionsView.swift in Sources */,
 				43DD350B2A066B4300BC00CB /* TicketsView.swift in Sources */,
-				ACE5A6CE2A0926D000B94A63 /* CompetitionsByDisciplineView.swift in Sources */,
 				AADA83292A08D5F4001E9081 /* OpenNewsView.swift in Sources */,
 				43DD35092A066B3D00BC00CB /* ProfileView.swift in Sources */,
 				43DD35032A066B2600BC00CB /* DiscoverView.swift in Sources */,
