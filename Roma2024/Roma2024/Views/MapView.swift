@@ -11,8 +11,10 @@ struct MapView: View {
     var body: some View {
         ZStack {
             
-            Image("map")
+//            Image("map")
+            Image("map2")
                 .resizable()
+                .scaledToFill()
                 
             HStack{
                 ZStack(alignment: .center){
