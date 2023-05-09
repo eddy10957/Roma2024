@@ -139,11 +139,25 @@ struct TicketsView: View {
                 Rectangle()
                     .foregroundColor(Color.secondaryBackground)
                 VStack(alignment: .leading) {
-                    Text(card.name)
-                        .font(.largeTitle)
-                        .bold()
-                        .padding([.top, .horizontal])
+                    HStack {
+                        Image("europeanAthletics")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 30)
+                        VStack(alignment: .leading) {
+                            Text(card.name)
+                                .font(.headline)
+                                .bold()
+                            Text(card.date)
+                                .fontWeight(.medium)
+                        }
+                    }
+                    .padding([.top, .horizontal])
                     Spacer()
+                    Text("Olympic Stadium")
+                        .font(.headline)
+                        .fontWeight(.medium)
+                        .padding([.bottom, .horizontal])
                 }
                 .padding(5)
                 .padding(.bottom, 10)
@@ -208,7 +222,7 @@ struct DetailView: View {
                     VStack(spacing: 20) {
                         
                         // QR Code
-                        Image("qrcode")
+                        Image(currentCard.image)
                             .resizable()
                             .scaledToFit()
                     }
@@ -225,21 +239,38 @@ struct DetailView: View {
     @ViewBuilder
     func CardView() -> some View {
         ZStack(alignment: .bottomLeading) {
-            // Image/Front of the Card in the DetailView
+            // Image/Front of the Card in the Wallet list
             Rectangle()
                 .foregroundColor(Color.secondaryBackground)
-                .cornerRadius(20)
             VStack(alignment: .leading) {
-                Text(currentCard.name)
-                    .font(.largeTitle)
-                    .bold()
-                    .padding([.top, .horizontal])
+                HStack {
+                    Image("europeanAthletics")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 30)
+                    VStack(alignment: .leading) {
+                        Text(currentCard.name)
+                            .font(.headline)
+                            .bold()
+                        Text(currentCard.date)
+                            .fontWeight(.medium)
+                    }
+                }
+                .padding([.top, .horizontal])
                 Spacer()
+                Text("Olympic Stadium")
+                    .font(.headline)
+                    .fontWeight(.medium)
+                    .padding([.bottom, .horizontal])
             }
             .padding(5)
             .padding(.bottom, 10)
             
         }
+        .cornerRadius(20)
+        .shadow(color: .white, radius: 2, x: 0, y: 0)
+        .padding(.horizontal, 3)
+        .padding(.top, 3)
         .overlay(alignment: .topTrailing) {
             // MARK: Close DetailView Button
             Button(action: {
@@ -250,12 +281,26 @@ struct DetailView: View {
                     }
                 })
             }, label: {
-                Image(systemName: "xmark")
-                    .resizable()
-                    .foregroundColor(.secondary)
-                    .frame(width: 20, height: 20)
-                    .padding(.trailing)
-                    .padding(.top, 30)
+//                Image(systemName: "xmark")
+//                    .resizable()
+//                    .foregroundColor(.hyperAccent)
+//                    .frame(width: 20, height: 20)
+//                    .padding(.trailing)
+//                    .padding(.top, 30)
+                
+                ZStack {
+                    Image(systemName: "circle.fill")
+                        .resizable()
+                        .foregroundColor(.white)
+                        .frame(width: 28, height: 28)
+                    Image(systemName: "plus.circle.fill")
+                        .resizable()
+                        .foregroundColor(.primaryBackground)
+                        .frame(width: 30, height: 30)
+                        .rotationEffect(.init(degrees: 45))
+                }
+                .padding(.trailing)
+                .padding(.top, 30)
             })
         }
     }
@@ -264,19 +309,21 @@ struct DetailView: View {
 // MARK: Card Model & SampleData
 
 struct Card: Identifiable, Hashable {
+    var logo: String = "europeanAthletics.small"
     var id = UUID().uuidString
     var name: String
+    var date: String
     var image: String
     var user: String
 }
 
 var cards: [Card] = [
-    Card(name: "07/05 roma 2024", image: "Car", user: "Raffaele Sicimmanu"),
-    Card(name: "08/05 roma 2024", image: "Car", user: "Raffaele Sicimmanu"),
-    Card(name: "09/05 roma 2024", image: "Motorcycle", user: "Raffaele Sicimmanu"),
-    Card(name: "10/05 roma 2024", image: "Motorcycle", user: "Raffaele Sicimmanu"),
-    Card(name: "11/05 roma 2024", image: "Motorcycle", user: "Raffaele Sicimmanu"),
-    Card(name: "12/05 roma 2024", image: "Motorcycle", user: "Raffaele Sicimmanu")
+    Card(name: "100m Men's Final", date: "07/06", image: "qrcode", user: "Raffaele Sicimmanu"),
+    Card(name: "High Jump Men's Qualification", date: "08/06", image: "qrcode", user: "Raffaele Sicimmanu"),
+    Card(name: "Triple Jump Women's Qualification", date: "09/06", image: "qrcode", user: "Raffaele Sicimmanu"),
+    Card(name: "800m Men's Final", date: "10/06", image: "qrcode", user: "Raffaele Sicimmanu"),
+    Card(name: "200m Women's Semifinal", date: "11/06", image: "qrcode", user: "Raffaele Sicimmanu"),
+    Card(name: "Shot Put Men's Final", date: "12/06", image: "qrcode", user: "Raffaele Sicimmanu")
 ]
 
 class ViewRouter: ObservableObject {
