@@ -82,10 +82,20 @@ class ViewModel : ObservableObject {
         
         
     ]
-    @Published var matches : [Match] = [
+    @Published var matches : [Match] = [
         Match(name: "100m Men's Final", time: "10:00 AM", athletes: [Athletes(name: "Dina", surname: "Asher-Smith", isFavorite: false, country: "United Kingdom", discipline: [.sprint, .relays], image: "dinaAsher-Smith"),
                                                                      Athletes(name: "Karsten", surname: "Warholm", isFavorite: false, country: "Norway", discipline: [.hurdles, .relays], image: "karstenWarholm"),
-                                                                     Athletes(name: "Gianmarco", surname: "Tamberi", isFavorite: true, country: "Italy", discipline: [.highJump], image: "gianmarcoTamberi")]),
+                                                                     Athletes(name: "Gianmarco", surname: "Tamberi", isFavorite: true, country: "Italy", discipline: [.highJump], image: "gianmarcoTamberi"),
+                                                                     Athletes(name: "Sifan", surname: "Hassan", isFavorite: false, country: "Netherlands", discipline: [.middleDistance, .longDistance], image: "sifanHassan"),
+                                                                     Athletes(name: "Malaika", surname: "Mihambo", isFavorite: true, country: "Germany", discipline: [.longJump], image: "malaikaMihambo"),
+                                                                     Athletes(name: "Jakob", surname: "Ingebrigtsen", isFavorite: false, country: "Norway", discipline: [.middleDistance], image: "jakobIngebrigtsen"),
+                                                                     Athletes(name: "Laura", surname: "Muir", isFavorite: false, country: "United Kingdom", discipline: [.middleDistance], image: "lauraMuir"),
+                                                                     Athletes(name: "Renaud", surname: "Lavillenie", isFavorite: false, country: "France", discipline: [.poleVault], image: "renaudLavillenie")]),
+        
+        
+        
+        
+        
         Match(name: "Long Jump Women's Qualification", time: "11:30 AM", athletes: [Athletes(name: "Dina", surname: "Asher-Smith", isFavorite: false, country: "United Kingdom", discipline: [.sprint, .relays], image: "dinaAsher-Smith"),
                                                                                     Athletes(name: "Karsten", surname: "Warholm", isFavorite: false, country: "Norway", discipline: [.hurdles, .relays], image: "karstenWarholm"),
                                                                                     Athletes(name: "Gianmarco", surname: "Tamberi", isFavorite: true, country: "Italy", discipline: [.highJump], image: "gianmarcoTamberi")]),

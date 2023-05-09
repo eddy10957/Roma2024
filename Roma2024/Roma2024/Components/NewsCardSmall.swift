@@ -22,6 +22,7 @@ struct NewsCardSmall: View {
                 Text(news.title)
                     .font(.headline)
                     .multilineTextAlignment(.leading)
+                    .foregroundColor(.black)
                 Text(news.subtitle!)
                     .font(.subheadline)
                     .multilineTextAlignment(.leading)
