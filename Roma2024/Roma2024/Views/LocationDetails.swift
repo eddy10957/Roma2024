@@ -37,8 +37,8 @@ struct LocationDetails: View {
             }
                 Spacer()
                 Button(action: {
-                    print("dio cane")
                     tappedLocation = false
+                    locationManager.yourPoints += 50
                 }, label: {
                     HStack{
                         Text("Earn 50")
