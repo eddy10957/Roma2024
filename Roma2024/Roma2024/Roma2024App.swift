@@ -26,6 +26,7 @@ struct Roma2024App: App {
                         .environmentObject(viewModel)
                 }
             }
+            .preferredColorScheme(.light)
             .animation(.easeInOut(duration: 0.35), value: showSplashScreen)
         }
     }
