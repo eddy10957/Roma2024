@@ -93,18 +93,18 @@ struct RedeemsView: View {
             .offset(y: expandCards ? 0 : 30)
             
             // MARK: Add Button
-            Button(action: {
-            }, label: {
-                Image(systemName: "plus.circle.fill")
-                    .font(.largeTitle)
-                    .foregroundColor(Color.primaryBackground)
-            })
-            .rotationEffect(.init(degrees: expandCards ? 180 : 0))
-            // To avoid warning 0.01
-            .scaleEffect(expandCards ? 0.01 : 1)
-            .opacity(!expandCards ? 1 : 0)
-            .frame(height: expandCards ? 0 : nil)
-            .padding(.bottom, expandCards ? 0 : 30)
+//            Button(action: {
+//            }, label: {
+//                Image(systemName: "plus.circle.fill")
+//                    .font(.largeTitle)
+//                    .foregroundColor(Color.primaryBackground)
+//            })
+//            .rotationEffect(.init(degrees: expandCards ? 180 : 0))
+//            // To avoid warning 0.01
+//            .scaleEffect(expandCards ? 0.01 : 1)
+//            .opacity(!expandCards ? 1 : 0)
+//            .frame(height: expandCards ? 0 : nil)
+//            .padding(.bottom, expandCards ? 0 : 30)
         }
         .padding([.horizontal, .top])
         .frame(maxWidth: .infinity, maxHeight: .infinity)
