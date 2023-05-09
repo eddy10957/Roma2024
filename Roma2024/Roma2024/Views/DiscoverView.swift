@@ -29,17 +29,6 @@ struct DiscoverView: View {
                 ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 3){
                     CategorySelector(selectedCategory: $selectedCategory)
-                    HStack {
-                        Text("For You")
-                            .font(.headline)
-                            .bold()
-                        Spacer()
-                        Text("Your Points: \(viewModel.yourPoints)")
-                            .font(.headline)
-                            .bold()
-                    }
-                    .padding(.horizontal)
-                    
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack{
                             HStack(alignment:.top) {

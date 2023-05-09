@@ -91,20 +91,7 @@ struct RedeemsView: View {
             }
             .coordinateSpace(name: "SCROLL")
             .offset(y: expandCards ? 0 : 30)
-            
-            // MARK: Add Button
-//            Button(action: {
-//            }, label: {
-//                Image(systemName: "plus.circle.fill")
-//                    .font(.largeTitle)
-//                    .foregroundColor(Color.primaryBackground)
-//            })
-//            .rotationEffect(.init(degrees: expandCards ? 180 : 0))
-//            // To avoid warning 0.01
-//            .scaleEffect(expandCards ? 0.01 : 1)
-//            .opacity(!expandCards ? 1 : 0)
-//            .frame(height: expandCards ? 0 : nil)
-//            .padding(.bottom, expandCards ? 0 : 30)
+        
         }
         .padding([.horizontal, .top])
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -212,6 +199,17 @@ struct RedeemDetailView: View {
     var body: some View {
         
         VStack {
+            HStack {
+//                Spacer()
+                Image("goldMedal")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 25, height: 25)
+                Text(" \(viewModel.yourPoints)")
+                    .font(.body)
+                    .foregroundColor(.black)
+//                Spacer()
+            }
             RedeemCardView()
                 .matchedGeometryEffect(id: currentCard.id, in: animation)
                 .frame(height: 200)
@@ -220,6 +218,7 @@ struct RedeemDetailView: View {
             GeometryReader { geo in
                 
                 VStack{
+                    
                     HStack {
                         VStack(alignment: .leading) {
                             
@@ -236,26 +235,49 @@ struct RedeemDetailView: View {
                     
                     VStack {
                         Spacer()
-                        Text(randomAlphanumericString())
-                            .fontWeight(.bold)
-                            .font(.largeTitle)
-                            .opacity(isRedeemed ? 1 : 0)
-
-                        Spacer()
-                        Button {
-                            if !isRedeemed {
-                                viewModel.redeemVoucher(redeemCard: currentCard)
+                        if !isRedeemed {
+                            Button {
+                                if !isRedeemed {
+                                    viewModel.redeemVoucher(redeemCard: currentCard)
+                                }
+                                isRedeemed = true
+                            } label: {
+                                Text("Redeem for \(currentCard.points) points")
+                                    .font(.title)
                             }
-                            isRedeemed = true
-                        } label: {
-                            if isRedeemed {
-                                Text("Redeemed")
-                            } else {
-                                Text("Redeem")
-                            }
+                            .buttonStyle(.borderedProminent)
+                            .tint(.hyperAccent)
+                            .foregroundColor(.white)
+                        } else {
+                            Text(randomAlphanumericString())
+                                .fontWeight(.bold)
+                                .font(.largeTitle)
+                                .opacity(isRedeemed ? 1 : 0)
                         }
-                        .buttonStyle(.borderedProminent)
-                        .foregroundColor(.white)
+                        Spacer()
+                        
+//                        Text(randomAlphanumericString())
+//                            .fontWeight(.bold)
+//                            .font(.largeTitle)
+//                            .opacity(isRedeemed ? 1 : 0)
+//
+//                        Spacer()
+//                        Button {
+//                            if !isRedeemed {
+//                                viewModel.redeemVoucher(redeemCard: currentCard)
+//                            }
+//                            isRedeemed = true
+//                        } label: {
+//                            if isRedeemed {
+//                                Text("Redeemed")
+//                            } else {
+//                                Text("Redeem")
+//                            }
+//                        }
+//                        .buttonStyle(.borderedProminent)
+//                        .foregroundColor(.white)
+                        
+                        
                     }
                     
                     

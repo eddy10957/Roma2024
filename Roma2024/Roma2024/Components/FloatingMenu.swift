@@ -14,13 +14,29 @@ struct FloatingMenu: View {
     @Binding var showProfile: Bool
     @Binding var showTickets: Bool
     @Binding var showRedeems: Bool
+    @EnvironmentObject var viewModel : ViewModel
     var body: some View {
         ZStack(alignment: .topTrailing) {
             if !expand {
                 LinearGradient(colors: [.primaryBackground.opacity(0.8), .primaryBackground.opacity(0.3), .white], startPoint: .top, endPoint: .bottom)
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                     .ignoresSafeArea(.all, edges: [.top])
+                VStack(alignment: .center) {
+                    HStack {
+                        Spacer()
+                        Image("goldMedal")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25, height: 25)
+                        Text(" \(viewModel.yourPoints)")
+                            .font(.body)
+                            .foregroundColor(.white)
+                        Spacer()
+                    }
+                    Spacer()
+                }
             }
+            
             VStack {
                 MainButton(action: {
                     expand.toggle()
