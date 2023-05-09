@@ -28,12 +28,13 @@ struct RedeemsView: View {
     var body: some View {
         VStack(spacing: 0) {
             
-            Text("Redeems")
-                .font(.largeTitle)
-                .fontWeight(.semibold)
-                .frame(maxWidth: .infinity, alignment: expandCards ? .leading : .center)
-                .padding(.leading, expandCards ? 15 : 0)
-                .opacity(showDetailCard ? 0 : 1)
+                Text("Redeems")
+                    .font(.largeTitle)
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity, alignment: expandCards ? .leading : .center)
+                    .padding(.leading, expandCards ? 15 : 0)
+                    .opacity(showDetailCard ? 0 : 1)
+            
                 .overlay(alignment: .trailing) {
                     
                     // MARK: Close Button
@@ -188,6 +189,7 @@ struct RedeemDetailView: View {
     var animation: Namespace.ID
     
     @ObservedObject var viewRouter: ViewRouter = ViewRouter.shared
+    @EnvironmentObject var viewModel : ViewModel
     
     func randomAlphanumericString() -> String {
        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
@@ -241,6 +243,9 @@ struct RedeemDetailView: View {
 
                         Spacer()
                         Button {
+                            if !isRedeemed {
+                                viewModel.redeemVoucher(redeemCard: currentCard)
+                            }
                             isRedeemed = true
                         } label: {
                             if isRedeemed {

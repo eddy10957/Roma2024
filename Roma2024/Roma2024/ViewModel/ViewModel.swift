@@ -11,6 +11,12 @@ class ViewModel : ObservableObject {
     
     static var shared = ViewModel()
     
+    @Published var yourPoints : Int = 4750
+    
+    func redeemVoucher(redeemCard: RedeemCard) {
+        yourPoints -= redeemCard.points
+    }
+    
     @Published var favoritesDisciplines : [Disciplines] = [
         .hammerThrow,
         .javelinThrow,
