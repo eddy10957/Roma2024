@@ -35,6 +35,7 @@ struct RedeemsView: View {
                     .padding(.leading, expandCards ? 15 : 0)
                     .opacity(showDetailCard ? 0 : 1)
             
+            
                 .overlay(alignment: .trailing) {
                     
                     // MARK: Close Button
@@ -52,7 +53,15 @@ struct RedeemsView: View {
                     .opacity(expandCards ? 1 : 0)
                     .opacity(expandCards ? 1 : 0)
                 }
-            
+            HStack {
+                Image("goldMedal")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 25, height: 25)
+                Text(" \(viewModel.yourPoints)")
+                    .font(.body)
+                    .foregroundColor(.black)
+            }
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 0) {
                     
@@ -258,29 +267,6 @@ struct RedeemDetailView: View {
                                 .opacity(isRedeemed ? 1 : 0)
                         }
                         Spacer()
-                        
-//                        Text(randomAlphanumericString())
-//                            .fontWeight(.bold)
-//                            .font(.largeTitle)
-//                            .opacity(isRedeemed ? 1 : 0)
-//
-//                        Spacer()
-//                        Button {
-//                            if !isRedeemed {
-//                                viewModel.redeemVoucher(redeemCard: currentCard)
-//                            }
-//                            isRedeemed = true
-//                        } label: {
-//                            if isRedeemed {
-//                                Text("Redeemed")
-//                            } else {
-//                                Text("Redeem")
-//                            }
-//                        }
-//                        .buttonStyle(.borderedProminent)
-//                        .foregroundColor(.white)
-                        
-                        
                     }
                     
                     
