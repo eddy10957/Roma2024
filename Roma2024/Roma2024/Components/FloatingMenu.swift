@@ -15,20 +15,27 @@ struct FloatingMenu: View {
     @Binding var showTickets: Bool
     @Binding var showRedeems: Bool
     var body: some View {
-        VStack {
-            MainButton(action: {
-                expand.toggle()
-            }, expand: $expand)
+        ZStack(alignment: .topTrailing) {
             if !expand {
-                MenuButton(action: {
-                    showProfile = true
-                }, title: "Profile", image: "person.circle.fill", expand: $expand, offset: -20)
-                MenuButton(action: {
-                    showTickets = true
-                }, title: "Tickets", image: "ticket.fill", expand: $expand, offset: -40)
-                MenuButton(action: {
-                    showRedeems = true
-                }, title: "Redeems", image: "tray.circle.fill", expand: $expand, offset: -60)
+                LinearGradient(colors: [.primaryBackground.opacity(0.8), .primaryBackground.opacity(0.3), .white], startPoint: .top, endPoint: .bottom)
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                    .ignoresSafeArea(.all, edges: [.top])
+            }
+            VStack {
+                MainButton(action: {
+                    expand.toggle()
+                }, expand: $expand)
+                if !expand {
+                    MenuButton(action: {
+                        showProfile = true
+                    }, title: "Profile", image: "person.circle.fill", expand: $expand, offset: -20)
+                    MenuButton(action: {
+                        showTickets = true
+                    }, title: "Tickets", image: "ticket.fill", expand: $expand, offset: -40)
+                    MenuButton(action: {
+                        showRedeems = true
+                    }, title: "Redeems", image: "tray.circle.fill", expand: $expand, offset: -60)
+                }
             }
         }
     }
@@ -56,7 +63,7 @@ struct MainButton: View {
                     .offset(y: !expand ? -7 : 0)
             }
             .font(.largeTitle)
-            .foregroundColor(.hyperAccent)
+            .foregroundColor(expand ? .hyperAccent : .body)
         })
         .padding(.bottom)
         .padding(.leading, !expand ? 60 : 0)
@@ -78,13 +85,13 @@ struct MenuButton: View {
             HStack {
                 Text(title)
                     .padding(5)
-                    .background(Color.secondaryBackground)
-                    .cornerRadius(20)
+//                    .background(Color.hyperAccent)
+//                    .cornerRadius(20)
                     .font(.footnote)
                     .foregroundColor(.body)
                 Image(systemName: image)
                     .font(.title)
-                    .foregroundColor(.secondaryBackground)
+                    .foregroundColor(.body)
             }
         })
         .buttonStyle(.plain)
